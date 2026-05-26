@@ -114,7 +114,7 @@ python3 .claude/skills/tech-news-daily/scripts/generate_message.py data/<id>.jso
 
 ### [10] Git 자동화
 
-원격 저장소: `https://github.com/kimpaulie/kaisttechbreif.git` (브랜치 `main`).
+원격 저장소: `https://github.com/kaistbiztech/dailytechbrief.git` (브랜치 `main`).
 
 다음을 순차 실행:
 

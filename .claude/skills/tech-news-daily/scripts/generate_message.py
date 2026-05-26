@@ -15,7 +15,7 @@ import json
 import sys
 from pathlib import Path
 
-SITE_URL = "https://kimpaulie.github.io/kaisttechbreif/"
+SITE_URL = "https://kaistbiztech.github.io/dailytechbrief/"
 PROJECT_ROOT = Path(__file__).resolve().parents[4]   # /Users/cheil/dev/technews
 TEMPLATE = Path(__file__).resolve().parents[1] / "templates" / "kakao-card.html"
 OUTPUT_BASE = PROJECT_ROOT / "Message"
