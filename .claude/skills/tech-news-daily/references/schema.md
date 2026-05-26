@@ -44,6 +44,7 @@ SKILL.md `[8] JSON 파일 작성` 단계의 세부 정의. 이 스키마는 `ind
   "order": 1,
   "title": "...",
   "summary": "...(정확히 3문장)",
+  "eventDate": "YYYY-MM-DD",
   "keywords": ["키워드1", "키워드2", "키워드3"],
   "sources": [
     { "name": "한국경제", "url": "https://www.hankyung.com/article/..." },
@@ -57,8 +58,9 @@ SKILL.md `[8] JSON 파일 작성` 단계의 세부 정의. 이 스키마는 `ind
 | `order` | int | 1~10. 배열 인덱스와 일치 |
 | `title` | string | 한글 24~29자. 회사명·핵심 숫자 포함 |
 | `summary` | string | 정확히 3문장, 존댓말 산문, 글머리표 금지 |
-| `keywords` | array (옵셔널) | 3~4개 키워드. 회사명·핵심 숫자·기술명 위주. 카톡 카드 키워드 클라우드에 사용 |
-| `sources` | array | 최소 1개. 한국어 매체가 있으면 앞쪽에 배치(없어도 무방) |
+| `eventDate` | string | **그 사건의 1차 발생일** (`YYYY-MM-DD`). **반드시 `coverage.from` ~ `coverage.to` 범위 안**. 사이트 카드에 표시됨 |
+| `keywords` | array | 3~4개 키워드. 회사명·핵심 숫자·기술명 위주 |
+| `sources` | array | 최소 1개. 한국어 매체가 있으면 앞쪽에 배치 |
 
 ### keywords 작성 가이드
 

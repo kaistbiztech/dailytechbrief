@@ -305,6 +305,11 @@
     gap: 10px;
     margin-bottom: 20px;
   }
+  .news-num-row {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
   .news-num {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
@@ -312,6 +317,16 @@
     line-height: 1;
     color: var(--kaist-blue);
     letter-spacing: -0.03em;
+  }
+  .news-event-date {
+    font-family: 'Inter', 'Pretendard', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-mute);
+    letter-spacing: 0;
+  }
+  .news-event-date::before {
+    content: "📅 ";
   }
   .news-title {
     font-size: clamp(22px, 2.4vw, 28px);
@@ -595,7 +610,7 @@
 <header>
   <div class="hero-brand" id="heroBrand" role="button" tabindex="0" aria-label="최신 호로 이동">
     <div class="hero-brand-inner">
-      <img class="hero-logo" src="KCB_Logo.png" alt="KAIST College of Business">
+      <img class="hero-logo" id="heroLogo" alt="KAIST College of Business">
       <div class="hero-network">KAIST 경영대학 테크 네트워크</div>
     </div>
   </div>
@@ -833,9 +848,16 @@
       const card = document.createElement('article');
       card.className = 'news-card';
       card.id = `news-${item.order}`;
+      const eventDateHtml = item.eventDate
+        ? `<span class="news-event-date">${esc(item.eventDate.replaceAll('-', '.'))}</span>`
+        : '';
+
       card.innerHTML = `
         <div class="news-card-head">
-          <div class="news-num">${pad2(item.order)}</div>
+          <div class="news-num-row">
+            <div class="news-num">${pad2(item.order)}</div>
+            ${eventDateHtml}
+          </div>
           <div class="news-title">${esc(item.title)}</div>
         </div>
         <div class="news-detail-inner">
@@ -930,6 +952,10 @@
   }
 
   async function init() {
+    // 로고 src를 BASE_PATH 기반 절대 경로로 (date/<id>/ 깊이에서도 정상 로드)
+    const heroLogo = document.getElementById('heroLogo');
+    if (heroLogo) heroLogo.src = BASE_PATH + 'KCB_Logo.png';
+
     try {
       _editions = await discoverEditions();
       if (_editions.length === 0) throw new Error('No editions found');
