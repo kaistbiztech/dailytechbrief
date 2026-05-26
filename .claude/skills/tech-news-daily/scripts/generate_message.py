@@ -20,7 +20,9 @@ from pathlib import Path
 
 SITE_URL = "https://kaistbiztech.github.io/dailytechbrief/"
 PROJECT_ROOT = Path(__file__).resolve().parents[4]   # /Users/cheil/dev/technews
-TEMPLATE = Path(__file__).resolve().parents[1] / "templates" / "kakao-card.html"
+TEMPLATES_DIR = Path(__file__).resolve().parents[1] / "templates"
+KAKAO_TEMPLATE = TEMPLATES_DIR / "kakao-card.html"   # 9:16 세로, 카톡 앱 첨부용
+OG_TEMPLATE = TEMPLATES_DIR / "og-card.html"          # 1.91:1 가로, 메신저 OG 미리보기용
 MESSAGE_BASE = PROJECT_ROOT / "Message"
 DATE_BASE = PROJECT_ROOT / "date"
 LOGO_PATH = PROJECT_ROOT / "KCB_Logo.png"
@@ -63,35 +65,43 @@ def build_text(edition: dict) -> str:
     return "\n".join(parts)
 
 
-def generate_card_png(edition: dict, out_paths: list[Path]) -> None:
-    """Playwright로 9:16 카드 PNG를 한 번 캡처하고 여러 경로에 저장."""
-    from playwright.sync_api import sync_playwright
+def _logo_data_url() -> str | None:
     import base64
+    if not LOGO_PATH.is_file():
+        return None
+    return "data:image/png;base64," + base64.b64encode(LOGO_PATH.read_bytes()).decode("ascii")
 
-    template_url = TEMPLATE.resolve().as_uri()
-    logo_url = None
-    if LOGO_PATH.is_file():
-        b = LOGO_PATH.read_bytes()
-        logo_url = "data:image/png;base64," + base64.b64encode(b).decode("ascii")
 
+def _capture(browser, template_path: Path, edition: dict, viewport: dict, out_path: Path, logo_url: str | None) -> None:
+    ctx = browser.new_context(viewport=viewport, device_scale_factor=2)
+    page = ctx.new_page()
+    page.goto(template_path.resolve().as_uri(), wait_until="networkidle")
+    page.evaluate(
+        "([ed, logo]) => window.renderEdition(ed, logo)",
+        [edition, logo_url],
+    )
+    page.wait_for_timeout(700)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    page.screenshot(path=str(out_path), full_page=False, type="png")
+    ctx.close()
+
+
+def generate_cards(edition: dict, kakao_out: Path, og_out: Path) -> None:
+    """
+    카톡 앱 첨부용 9:16 세로 카드 + 메신저 OG 1.91:1 가로 카드를 각각 캡처.
+
+    - kakao_out: 1080×1920 (Message/<id>/card.png)
+    - og_out: 1200×630 (date/<id>/og.png)
+    """
+    from playwright.sync_api import sync_playwright
+
+    logo_url = _logo_data_url()
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        ctx = browser.new_context(viewport={"width": 1080, "height": 1920}, device_scale_factor=2)
-        page = ctx.new_page()
-        page.goto(template_url, wait_until="networkidle")
-        page.evaluate(
-            "([ed, logo]) => window.renderEdition(ed, logo)",
-            [edition, logo_url],
-        )
-        page.wait_for_timeout(700)
-
-        # 첫 경로에 캡처 후 나머지로 복사
-        primary = out_paths[0]
-        primary.parent.mkdir(parents=True, exist_ok=True)
-        page.screenshot(path=str(primary), full_page=False, type="png")
-        for other in out_paths[1:]:
-            other.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(primary, other)
+        _capture(browser, KAKAO_TEMPLATE, edition,
+                 {"width": 1080, "height": 1920}, kakao_out, logo_url)
+        _capture(browser, OG_TEMPLATE, edition,
+                 {"width": 1200, "height": 630}, og_out, logo_url)
         browser.close()
 
 
@@ -118,10 +128,10 @@ def main() -> int:
     text_path.write_text(build_text(edition), encoding="utf-8")
     print(f"✓ wrote {text_path.relative_to(PROJECT_ROOT)}")
 
-    # 2) 카드 PNG — 한 번 캡처, 두 경로 저장
+    # 2) 카드 PNG: 카톡용(9:16) + OG용(1.91:1) 각각 캡처
     card_path = message_dir / "card.png"
     og_path = date_dir / "og.png"
-    generate_card_png(edition, [card_path, og_path])
+    generate_cards(edition, kakao_out=card_path, og_out=og_path)
     print(f"✓ wrote {card_path.relative_to(PROJECT_ROOT)}")
     print(f"✓ wrote {og_path.relative_to(PROJECT_ROOT)}")
 

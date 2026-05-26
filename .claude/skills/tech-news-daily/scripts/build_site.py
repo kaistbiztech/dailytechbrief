@@ -96,14 +96,6 @@ def render_page(template_html: str, edition: dict, latest_id: str, og_url: str) 
     return META_PATTERN.sub(replacement, template_html)
 
 
-def copy_card_png(edition_id: str, dest: Path) -> None:
-    """Message/<id>/card.png가 있으면 date/<id>/og.png로 복사."""
-    src = MESSAGE_DIR / edition_id / "card.png"
-    if src.is_file():
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(src, dest)
-
-
 def main() -> int:
     if not INDEX_HTML.is_file():
         print(f"Template not found: {INDEX_HTML}", file=sys.stderr)
@@ -130,10 +122,7 @@ def main() -> int:
         print(f"✓ wrote {(page_dir / 'index.html').relative_to(PROJECT_ROOT)}")
 
         og_path = page_dir / "og.png"
-        copy_card_png(eid, og_path)
-        if og_path.is_file():
-            print(f"✓ copied {og_path.relative_to(PROJECT_ROOT)}")
-        else:
+        if not og_path.is_file():
             print(f"⚠ {og_path.relative_to(PROJECT_ROOT)} 없음 — generate_message.py를 먼저 실행하세요", file=sys.stderr)
 
     # 2) 루트 index.html (= 최신 호와 동일, og:url만 루트)

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Daily Tech Brief OG Card</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --kaist-blue: #1f4899;
+    --kaist-blue-deep: #15326b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1200px;
+    height: 630px;
+    background: var(--kaist-blue);
+    color: #fff;
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+  }
+  body {
+    padding: 56px 64px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  body::before {
+    content: "";
+    position: absolute;
+    right: -150px;
+    bottom: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* 상단 — 브랜드 */
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+  .brand-logo {
+    height: 58px;
+    width: auto;
+    flex-shrink: 0;
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+  .brand-name {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    color: rgba(255,255,255,0.95);
+  }
+
+  /* 중앙 — 제호 + 날짜 */
+  .title-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 28px;
+    margin-bottom: 26px;
+    flex-wrap: wrap;
+  }
+  .masthead {
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+  .date-line {
+    font-family: 'Inter', 'Pretendard', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: rgba(255,255,255,0.95);
+    line-height: 1;
+  }
+  .date-line .dow {
+    margin-left: 10px;
+    color: rgba(255,255,255,0.65);
+    font-weight: 700;
+  }
+
+  /* 키워드 — 가운데~하단 */
+  .keywords {
+    flex: 1;
+    background: var(--kaist-blue-deep);
+    border-radius: 14px;
+    padding: 22px 26px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+  }
+  .keywords .kw {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.05;
+  }
+  .kw.size-1 { font-size: 18px; opacity: 0.65; font-weight: 600; }
+  .kw.size-2 { font-size: 24px; opacity: 0.85; }
+  .kw.size-3 { font-size: 32px; }
+  .kw.size-4 { font-size: 40px; font-weight: 800; }
+  /* 색조 — order 순환 */
+  .kw[data-order="1"], .kw[data-order="6"]  { color: #ffffff; }
+  .kw[data-order="2"], .kw[data-order="7"]  { color: #fef9e0; }
+  .kw[data-order="3"], .kw[data-order="8"]  { color: #d8ecff; }
+  .kw[data-order="4"], .kw[data-order="9"]  { color: #ecd9ff; }
+  .kw[data-order="5"], .kw[data-order="10"] { color: #ffd9e3; }
+
+  /* 하단 — URL */
+  .footer {
+    margin-top: 22px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .footer-url {
+    font-family: 'Inter', monospace;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: -0.005em;
+  }
+</style>
+</head>
+<body>
+  <div class="brand">
+    <img class="brand-logo" id="brandLogo" alt="KCB" />
+    <div class="brand-name">KAIST 경영대학 테크 네트워크</div>
+  </div>
+
+  <div class="title-row">
+    <div class="masthead">데일리 테크 브리프</div>
+    <div class="date-line" id="dateLine">— <span class="dow"></span></div>
+  </div>
+
+  <div class="keywords" id="keywordList"></div>
+
+  <div class="footer">
+    <div class="footer-url" id="footerUrl">kaistbiztech.github.io/dailytechbrief</div>
+  </div>
+
+<script>
+  function escHtml(s) {
+    return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  function render(ed, logoDataUrl) {
+    if (logoDataUrl) document.getElementById('brandLogo').src = logoDataUrl;
+
+    const dateStr = ed.id.replaceAll('-', '.');
+    document.getElementById('dateLine').innerHTML =
+      `${dateStr} <span class="dow">${ed.dayOfWeek}요일</span>`;
+
+    // 상위 카드의 키워드만 노출 (1~6번). 1·2번 키워드는 size-4, 3·4번은 size-3, 5·6번은 size-2.
+    const cloud = document.getElementById('keywordList');
+    cloud.innerHTML = '';
+    const TOP = ed.newsItems.slice(0, 6);
+    TOP.forEach(it => {
+      let size;
+      if (it.order <= 2) size = 4;
+      else if (it.order <= 4) size = 3;
+      else size = 2;
+      (it.keywords || []).slice(0, 2).forEach(k => {
+        const span = document.createElement('span');
+        span.className = 'kw size-' + size;
+        span.dataset.order = it.order;
+        span.textContent = k;
+        cloud.appendChild(span);
+      });
+    });
+  }
+  window.renderEdition = render;
+</script>
+</body>
+</html>
