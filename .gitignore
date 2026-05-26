@@ -4,3 +4,8 @@
 .idea/
 .vscode/
 node_modules/
+
+# 로컬 전용 산출물·작업 문서
+Message/
+planning/
+__pycache__/

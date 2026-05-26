@@ -3,84 +3,27 @@
 Daily Tech Brief - 카톡 공유 산출물 생성기
 
 입력: data/YYYY-MM-DD.json
-출력: Message/YYYY-MM-DD/card.png + Message/YYYY-MM-DD/text.txt
+출력:
+  - Message/YYYY-MM-DD/card.png   (로컬 카톡 첨부 사본)
+  - Message/YYYY-MM-DD/text.txt   (로컬 카톡 복붙 텍스트)
+  - date/YYYY-MM-DD/og.png        (사이트 OG 이미지, 깃 푸시)
+
+OG 메타가 박힌 일자별 정적 HTML은 build_site.py가 생성한다.
 
 사용법:
     python3 .claude/skills/tech-news-daily/scripts/generate_message.py data/2026-05-26.json
-
-의존성: playwright (이미 설치됨)
 """
-import base64
 import json
+import shutil
 import sys
 from pathlib import Path
 
 SITE_URL = "https://kaistbiztech.github.io/dailytechbrief/"
 PROJECT_ROOT = Path(__file__).resolve().parents[4]   # /Users/cheil/dev/technews
 TEMPLATE = Path(__file__).resolve().parents[1] / "templates" / "kakao-card.html"
-OUTPUT_BASE = PROJECT_ROOT / "Message"
+MESSAGE_BASE = PROJECT_ROOT / "Message"
+DATE_BASE = PROJECT_ROOT / "date"
 LOGO_PATH = PROJECT_ROOT / "KCB_Logo.png"
-
-
-def build_og_html(edition: dict) -> str:
-    """OG 메타가 박힌 일자별 진입 페이지. 클릭 시 메인 페이지로 즉시 redirect.
-
-    공유 URL: SITE_URL + <id>/ → 이 HTML이 응답.
-    메신저(카톡·슬랙·페북·트위터)는 이 HTML의 <meta> 만 읽고 미리보기에 사용.
-    """
-    eid = edition["id"]
-    date_str = eid.replace("-", ".")
-    dow = edition.get("dayOfWeek", "")
-    titles = edition.get("newsItems", [])
-    headlines_preview = " · ".join(
-        f'{it["order"]:02d} {it["title"]}' for it in titles[:3]
-    )
-
-    og_image = f"{SITE_URL}Message/{eid}/card.png"
-    og_url = f"{SITE_URL}{eid}/"
-    redirect_url = f"{SITE_URL}#{eid}"
-
-    title = f"데일리 테크 브리프 — {date_str} {dow}요일"
-
-    # HTML escape
-    def esc(s: str) -> str:
-        return (
-            s.replace("&", "&amp;")
-            .replace("<", "&lt;")
-            .replace(">", "&gt;")
-            .replace('"', "&quot;")
-        )
-
-    return f"""<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<title>{esc(title)}</title>
-<meta property="og:type" content="article">
-<meta property="og:title" content="{esc(title)}">
-<meta property="og:description" content="{esc(headlines_preview)}">
-<meta property="og:image" content="{esc(og_image)}">
-<meta property="og:image:width" content="1080">
-<meta property="og:image:height" content="1920">
-<meta property="og:url" content="{esc(og_url)}">
-<meta property="og:site_name" content="KAIST 경영대학 테크 네트워크">
-<meta property="og:locale" content="ko_KR">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{esc(title)}">
-<meta name="twitter:description" content="{esc(headlines_preview)}">
-<meta name="twitter:image" content="{esc(og_image)}">
-<meta http-equiv="refresh" content="0; url={esc(redirect_url)}">
-<script>location.replace({json.dumps(redirect_url)});</script>
-<style>
-  body {{ font-family: -apple-system, 'Pretendard', sans-serif; padding: 40px; color: #333; }}
-  a {{ color: #1f4899; }}
-</style>
-</head>
-<body>
-<p>{esc(title)}로 이동 중입니다… <a href="{esc(redirect_url)}">바로 이동</a></p>
-</body>
-</html>
-"""
 
 
 def build_text(edition: dict) -> str:
@@ -94,7 +37,7 @@ def build_text(edition: dict) -> str:
     parts.append("데일리 테크 브리프")
     parts.append(f"{date_str} {dow}요일")
     parts.append("")
-    parts.append(f"전체 보기 👉 {SITE_URL}{eid}/")
+    parts.append(f"전체 보기 👉 {SITE_URL}date/{eid}/")
 
     # 키워드 묶음
     all_kw = []
@@ -109,32 +52,27 @@ def build_text(edition: dict) -> str:
     parts.append("━━━━━━━━━━━━━━━━━━━")
     parts.append("")
 
-    # 각 카드: 번호 + 제목 + 3문장 요약
     for item in edition["newsItems"]:
         parts.append(f"{item['order']:02d}. {item['title']}")
         parts.append(item["summary"])
         parts.append("")
 
     parts.append("━━━━━━━━━━━━━━━━━━━")
-    parts.append(f"전체 보기 👉 {SITE_URL}{eid}/")
+    parts.append(f"전체 보기 👉 {SITE_URL}date/{eid}/")
     parts.append("© KAIST 경영대학 테크 네트워크")
     return "\n".join(parts)
 
 
-def logo_as_data_url() -> str | None:
-    """KCB 로고 PNG를 base64 data: URL로 인코딩."""
-    if not LOGO_PATH.is_file():
-        return None
-    b = LOGO_PATH.read_bytes()
-    return "data:image/png;base64," + base64.b64encode(b).decode("ascii")
-
-
-def generate_card_png(edition: dict, out_path: Path) -> None:
-    """Playwright로 9:16 카드 PNG 생성."""
+def generate_card_png(edition: dict, out_paths: list[Path]) -> None:
+    """Playwright로 9:16 카드 PNG를 한 번 캡처하고 여러 경로에 저장."""
     from playwright.sync_api import sync_playwright
+    import base64
 
     template_url = TEMPLATE.resolve().as_uri()
-    logo_url = logo_as_data_url()
+    logo_url = None
+    if LOGO_PATH.is_file():
+        b = LOGO_PATH.read_bytes()
+        logo_url = "data:image/png;base64," + base64.b64encode(b).decode("ascii")
 
     with sync_playwright() as p:
         browser = p.chromium.launch()
@@ -145,9 +83,15 @@ def generate_card_png(edition: dict, out_path: Path) -> None:
             "([ed, logo]) => window.renderEdition(ed, logo)",
             [edition, logo_url],
         )
-        # 폰트·이미지 적용 대기
         page.wait_for_timeout(700)
-        page.screenshot(path=str(out_path), full_page=False, type="png")
+
+        # 첫 경로에 캡처 후 나머지로 복사
+        primary = out_paths[0]
+        primary.parent.mkdir(parents=True, exist_ok=True)
+        page.screenshot(path=str(primary), full_page=False, type="png")
+        for other in out_paths[1:]:
+            other.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(primary, other)
         browser.close()
 
 
@@ -162,24 +106,23 @@ def main() -> int:
         return 1
 
     edition = json.loads(json_path.read_text(encoding="utf-8"))
-    out_dir = OUTPUT_BASE / edition["id"]
-    out_dir.mkdir(parents=True, exist_ok=True)
+    eid = edition["id"]
 
-    # 1) 텍스트
-    text_path = out_dir / "text.txt"
+    message_dir = MESSAGE_BASE / eid
+    message_dir.mkdir(parents=True, exist_ok=True)
+    date_dir = DATE_BASE / eid
+    date_dir.mkdir(parents=True, exist_ok=True)
+
+    # 1) 텍스트 (로컬)
+    text_path = message_dir / "text.txt"
     text_path.write_text(build_text(edition), encoding="utf-8")
     print(f"✓ wrote {text_path.relative_to(PROJECT_ROOT)}")
 
-    # 2) 이미지
-    card_path = out_dir / "card.png"
-    generate_card_png(edition, card_path)
+    # 2) 카드 PNG — 한 번 캡처, 두 경로 저장
+    card_path = message_dir / "card.png"
+    og_path = date_dir / "og.png"
+    generate_card_png(edition, [card_path, og_path])
     print(f"✓ wrote {card_path.relative_to(PROJECT_ROOT)}")
-
-    # 3) 일자별 OG 진입 페이지 (프로젝트 루트의 {id}/index.html)
-    share_dir = PROJECT_ROOT / edition["id"]
-    share_dir.mkdir(parents=True, exist_ok=True)
-    og_path = share_dir / "index.html"
-    og_path.write_text(build_og_html(edition), encoding="utf-8")
     print(f"✓ wrote {og_path.relative_to(PROJECT_ROOT)}")
 
     return 0
