@@ -299,11 +299,8 @@
     border-top: 2px solid var(--ink);
   }
   .archive-row {
-    display: grid;
-    grid-template-columns: 160px 1fr 20px;
-    gap: 20px;
-    align-items: center;
-    padding: 14px 8px;
+    display: block;
+    padding: 18px 8px;
     border-bottom: 1px solid var(--rule);
     transition: all 0.18s;
     cursor: pointer;
@@ -312,12 +309,20 @@
     background: var(--rule-soft);
     padding-left: 14px;
   }
-  .archive-row:hover .archive-headline { color: var(--kaist-blue); }
-  .archive-row:hover .archive-arrow { color: var(--kaist-blue); transform: translateX(4px); }
+  .archive-row-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .archive-row:hover .archive-arrow {
+    color: var(--kaist-blue);
+    transform: translateX(4px);
+  }
   .archive-date {
     font-family: 'Inter', 'Pretendard', sans-serif;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 15px;
     color: var(--kaist-blue);
     letter-spacing: -0.01em;
     line-height: 1.2;
@@ -332,23 +337,40 @@
     color: var(--ink-mute);
     letter-spacing: 0;
   }
-  .archive-headline {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--ink);
+  .archive-arrow {
+    color: var(--ink-mute);
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.18s;
+  }
+  .archive-titles {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .archive-title-row {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 8px;
+    font-size: 12.5px;
+    line-height: 1.4;
+    color: var(--ink-soft);
     letter-spacing: -0.01em;
-    line-height: 1.35;
+  }
+  .archive-title-row .archive-title-num {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--kaist-blue);
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .archive-title-row .archive-title-text {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     transition: color 0.18s;
   }
-  .archive-arrow {
-    color: var(--ink-mute);
-    font-size: 14px;
-    font-weight: 700;
-    transition: all 0.18s;
-  }
+  .archive-row:hover .archive-title-text { color: var(--ink); }
 
   /* ============ FOOTER ============ */
   .footer {
@@ -430,18 +452,16 @@
 
     .archive { padding: 0 22px 56px; margin-top: 56px; }
     .archive-row {
-      grid-template-columns: 1fr 16px;
-      gap: 6px;
       padding: 14px 4px;
     }
     .archive-row:hover { padding-left: 10px; }
-    .archive-date {
-      grid-column: 1 / -1;
-      font-size: 13px;
-      gap: 8px;
+    .archive-row-header { margin-bottom: 8px; }
+    .archive-date { font-size: 14px; }
+    .archive-title-row {
+      grid-template-columns: 20px 1fr;
+      gap: 6px;
+      font-size: 12px;
     }
-    .archive-headline { font-size: 13px; grid-column: 1; white-space: normal; }
-    .archive-arrow { grid-column: 2; grid-row: 2; font-size: 13px; }
   }
 </style>
 </head>
@@ -642,14 +662,23 @@
     }
 
     items.forEach(e => {
-      const headline = (e.newsItems && e.newsItems[0]) ? e.newsItems[0].title : '(헤드라인 없음)';
+      const top5 = (e.newsItems || []).slice(0, 5);
       const row = document.createElement('a');
       row.className = 'archive-row';
       row.href = `#${e.id}`;
       row.innerHTML = `
-        <div class="archive-date">${esc(formatDate(e.id))} <small>${esc(e.dayOfWeek)}요일</small></div>
-        <div class="archive-headline">${esc(headline)}</div>
-        <div class="archive-arrow">→</div>
+        <div class="archive-row-header">
+          <div class="archive-date">${esc(formatDate(e.id))} <small>${esc(e.dayOfWeek)}요일</small></div>
+          <div class="archive-arrow">→</div>
+        </div>
+        <div class="archive-titles">
+          ${top5.map(item => `
+            <div class="archive-title-row">
+              <span class="archive-title-num">${pad2(item.order)}</span>
+              <span class="archive-title-text">${esc(item.title)}</span>
+            </div>
+          `).join('')}
+        </div>
       `;
       row.addEventListener('click', (ev) => {
         ev.preventDefault();
