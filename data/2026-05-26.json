@@ -1,0 +1,95 @@
+{
+  "id": "2026-05-26",
+  "volumeNumber": 88,
+  "publishedAt": "2026-05-26T06:30:00+09:00",
+  "dayOfWeek": "화",
+  "newsItems": [
+    {
+      "order": 1,
+      "title": "엔비디아, 다음 분기 매출 125조 원 가이던스… '에이전틱 AI 시대' 선언",
+      "summary": "엔비디아가 2026 회계연도 1분기에 데이터센터 매출이 전년 대비 거의 두 배로 늘었다고 발표하였으며 다음 분기 매출 가이던스를 910억 달러(약 125조 원)로 제시하였습니다. 젠슨 황 CEO는 \"에이전틱 AI 시대가 도래하였다\"고 선언하며 앤트로픽을 핵심 신규 고객으로 명시하였고 마이크로소프트 애저·아마존 AWS·코어위브를 통한 보안 컴퓨트가 새 동력이라고 밝혔습니다. 사상 첫 분기 900억 달러대 가이던스는 SK하이닉스가 HBM 물량을 완판하고 삼성전자가 AMD 주공급사로 합류한 한국 HBM 공급망에 직접적인 추가 수혜를 가져올 것으로 예상됩니다.",
+      "sources": [
+        { "name": "CNBC", "url": "https://www.cnbc.com/2026/05/20/nvidia-nvda-earnings-report-q1-2027.html" },
+        { "name": "CNBC", "url": "https://www.cnbc.com/2026/05/22/the-tech-download-what-you-might-have-missed-in-nvidias-earnings.html" }
+      ]
+    },
+    {
+      "order": 2,
+      "title": "OpenAI, IPO 청구서 비밀 제출 임박… 1,170조 원 밸류 사상 최대",
+      "summary": "오픈AI가 1,220억 달러(약 168조 원) 규모 펀딩을 사상 최대 사적 펀딩으로 마감한 직후 미국 증권거래위원회에 IPO 사전 제출 자료를 비밀로 접수하기 시작하였습니다. 펀딩 후 밸류에이션은 8,520억 달러(약 1,170조 원)이며 아마존 500억 달러(약 69조 원)·엔비디아 300억 달러·소프트뱅크 300억 달러가 앵커 투자자로 참여한 구조입니다. CFO 사라 프라이어는 일부 IPO 주식을 개인 투자자에게도 배정하겠다고 밝혀, 토스·카카오페이 등 한국 핀테크 IPO 대기 흐름에도 우호적 시그널이 될 것으로 전망됩니다.",
+      "sources": [
+        { "name": "CNBC", "url": "https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html" },
+        { "name": "TechCrunch", "url": "https://techcrunch.com/2026/03/31/openai-not-yet-public-raises-3b-from-retail-investors-in-monster-122b-fund-raise/" },
+        { "name": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-03-31/openai-valued-at-852-billion-after-completing-122-billion-round" }
+      ]
+    },
+    {
+      "order": 3,
+      "title": "화웨이, 1.4나노 등가 칩 2031년 목표… '타우 법칙·로직폴딩' 공개",
+      "summary": "화웨이가 5월 25일 상하이 ISCAS 학회에서 새 반도체 설계 이론 '타우 스케일링 법칙'과 '로직폴딩' 아키텍처를 공개하며 2031년까지 1.4나노 등가 칩 설계를 완성하겠다고 발표하였습니다. 허팅보 하이실리콘 사장은 트랜지스터 밀도를 평방밀리미터당 238백만 개로 53.5% 끌어올렸으며 이 아키텍처로 지난 6년간 381종의 칩을 양산하였다고 밝혔습니다. 미국 제재로 EUV 장비를 도입하지 못한 상황에서 설계로 우회하는 전략이며, TSMC와의 5년 격차를 좁히려는 시도가 본격화되면서 삼성 파운드리에는 신흥 경쟁자가 한 곳 더 추가되는 부담이 될 것으로 전망됩니다.",
+      "sources": [
+        { "name": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-05-25/huawei-touts-chipmaking-breakthrough-to-shorten-gap-with-tsmc" },
+        { "name": "CNBC", "url": "https://www.cnbc.com/2026/05/25/huawei-chip-logicfolding-semiconductor-nvidia-china.html" },
+        { "name": "Fortune", "url": "https://fortune.com/2026/05/25/huawei-touts-chip-breakthrough-to-shorten-gap-with-tsmc/" }
+      ]
+    },
+    {
+      "order": 4,
+      "title": "AMD, HBM4 주공급사에 삼성 지명… SK 독주 70%에 균열",
+      "summary": "AMD가 차세대 AI 가속기에 탑재할 HBM4 메모리 주공급사로 삼성전자를 지명한 사실이 5월 들어 확정되며 SK하이닉스의 독주 구도에 처음으로 균열이 발생하였습니다. UBS는 엔비디아 차세대 '루빈' 플랫폼 HBM4 시장에서 SK하이닉스 점유율을 약 70%로 예상하였지만 AMD 라인 진입 효과로 삼성전자는 올해 2월 업계 최초로 시작한 HBM4 양산 출하 카드와 결합되어 추격 동력을 얻게 됩니다. 두 회사의 합산 메모리 영업이익이 2026년 사상 최대 204조 원에 이를 것으로 전망되는 가운데 이번 지명은 단순 부품 계약을 넘어 HBM 시장의 구도가 양강 체제로 재편되는 신호로 해석됩니다.",
+      "sources": [
+        { "name": "글로벌이코노믹", "url": "https://www.g-enews.com/article/Global-Biz/2026/05/202605080644316380fbbec65dfb_1" }
+      ]
+    },
+    {
+      "order": 5,
+      "title": "OCI, 반도체·AI 인프라 소재로 사업 재편… 화학사에서 정밀소재로",
+      "summary": "OCI가 기존 화학 중심 사업 구조에서 벗어나 반도체용 폴리실리콘·인산·고순도 과산화수소 등 정밀 소재 중심으로 사업을 재편한다고 5월 25일 공식 발표하였습니다. AI 인프라 확산으로 웨이퍼·식각·세정 공정 소재 수요가 폭증한 흐름에 맞춰 기존 폴리실리콘 생산 라인을 반도체급으로 전환하고 신규 라인을 증설한다는 계획입니다. 한국 소재 기업이 SK실트론·동진쎄미켐과 같은 정밀 소재 카테고리로 영역을 넓혀가는 흐름이 가속화되어 글로벌 AI 인프라 공급망 내 한국 기업 비중이 커질 것으로 전망됩니다.",
+      "sources": [
+        { "name": "SPTA Times Korea", "url": "https://www.sptatimeskorea.com/post/제20260525-ti-01호-2026년-5월-25일-글로벌-반도체-산업-관련-주요-뉴스-요약" }
+      ]
+    },
+    {
+      "order": 6,
+      "title": "앤트로픽, 밀라노 사무소 개설… 유럽 매출 9배 성장",
+      "summary": "앤트로픽이 5월 말 이탈리아 밀라노에 신규 사무소를 열며 런던·더블린·취리히·파리·뮌헨에 이어 유럽 거점을 한 곳 더 확장하였습니다. 회사는 EMEA(유럽·중동·아프리카) 권역 런레이트 매출이 전년 대비 9배 증가하였고 대형 기업 계좌는 10배 늘었다고 밝혔으며 인터내셔널 인력 규모를 3배로 확대할 계획입니다. 오픈AI가 한국 데이터센터로 아시아 확장에 나선 흐름과 맞물려, 한국 엔터프라이즈 시장에도 앤트로픽 한국 진출 시점이 앞당겨질 가능성이 거론되고 있습니다.",
+      "sources": [
+        { "name": "Global Banking & Finance Review", "url": "https://www.globalbankingandfinance.com/anthropic-open-milan-office-expanding-push-europe/" },
+        { "name": "Yahoo Finance", "url": "https://finance.yahoo.com/sectors/technology/articles/anthropic-open-milan-office-expanding-095020601.html" }
+      ]
+    },
+    {
+      "order": 7,
+      "title": "과기정통부, 연내 국산 무료 AI 서비스 사업자 공모 임박",
+      "summary": "과학기술정보통신부가 연내 국산 무료 AI 서비스를 운영할 사업자를 선정하기 위해 조만간 공식 사업 공고를 낼 예정이라고 5월 25일 확인되었습니다. 국민 누구나 무료로 사용할 수 있는 자국산 AI 서비스를 정책적으로 보급해 챗GPT·제미나이 등 해외 빅테크 의존도를 낮추겠다는 구상으로 알려져 있습니다. 네이버 클로바, 카카오 카나나, 업스테이지 솔라 등 국내 LLM 기업들에게 정부가 보장하는 대규모 사용자 풀이 열리는 기회가 될 것으로 전망됩니다.",
+      "sources": [
+        { "name": "SPTA Times Korea", "url": "https://www.sptatimeskorea.com/post/제20260525-ti-01호-2026년-5월-25일-글로벌-반도체-산업-관련-주요-뉴스-요약" }
+      ]
+    },
+    {
+      "order": 8,
+      "title": "빅테크, AI 조직에 7,000명 재배치… 연말 추가 감원 예고",
+      "summary": "미국 빅테크 기업들이 최근 며칠 사이 총 7,000여 명의 인력을 신규 AI 전담 조직으로 재배치한 것으로 5월 25일 외신 보도를 통해 확인되었습니다. 모델 개발과 인프라 우선순위에 맞춰 팀 구조를 다시 그리는 작업이며 2026년 후반 추가 감원도 예고된 상태로 알려져 있습니다. 미국 본사의 조직 재편은 통상 한국 법인의 R&D 우선순위와 채용 기조에도 시차를 두고 반영되어, 국내 빅테크 협력사들의 사업 우선순위에 영향을 줄 것으로 예상됩니다.",
+      "sources": [
+        { "name": "Tech Startups", "url": "https://techstartups.com/2026/05/22/top-tech-news-today-may-22-2026/" }
+      ]
+    },
+    {
+      "order": 9,
+      "title": "깃허브 공급망 공격 '메갈로돈', 6시간 새 5,561개 저장소 감염",
+      "summary": "5월 18일 발견된 '메갈로돈' 공급망 공격이 6시간 만에 깃허브 5,561개 저장소에 5,718개의 악성 커밋을 자동으로 푸시하며 CI 시크릿과 클라우드 자격증명을 대규모로 유출시킨 것으로 5월 25일 후속 분석되었습니다. 자동화된 봇이 깃허브 액션 워크플로를 변조해 빌드 단계에서 자격증명을 외부로 빼내는 방식이었으며 오픈소스 라이브러리도 8개 패키지 매니저용 채널에서 동시에 감염되었습니다. 국내 핀테크·게임사 다수가 깃허브 액션을 빌드 파이프라인으로 운영하는 만큼 자체 워크플로 무결성 점검과 시크릿 회전 작업이 시급한 상황입니다.",
+      "sources": [
+        { "name": "The Hacker News", "url": "https://thehackernews.com/2026/05/megalodon-github-attack-targets-5561.html" },
+        { "name": "Cybersecurity Dive", "url": "https://www.cybersecuritydive.com/news/github-hacked-repository-data/820722/" }
+      ]
+    },
+    {
+      "order": 10,
+      "title": "한국 보안업계, 내수에서 중동·동남아 진출 본격화",
+      "summary": "국내 사이버보안 업계가 내수 중심 성장 한계에 부딪힌 가운데 중동과 동남아시아 시장으로 사업 무게중심을 옮기는 흐름이 5월 들어 본격화되었습니다. 한국 보안 기업들이 사우디 비전 2030 데이터센터 보호와 인도네시아·말레이시아 디지털 인프라 수요를 겨냥해 현지 통합 보안 관제 서비스 사업 수주에 잇따라 나서고 있습니다. 24시간 운영 노하우와 가격 경쟁력이 결합되어 글로벌 보안관제센터(SOC) 수요 폭증 속 신흥 시장 보안 산업의 새로운 한국 수출 카테고리로 자리 잡을 가능성이 큽니다.",
+      "sources": [
+        { "name": "SPTA Times Korea", "url": "https://www.sptatimeskorea.com/post/제20260525-ti-01호-2026년-5월-25일-글로벌-반도체-산업-관련-주요-뉴스-요약" }
+      ]
+    }
+  ]
+}
