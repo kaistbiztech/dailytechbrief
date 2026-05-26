@@ -21,7 +21,7 @@
     overflow: hidden;
   }
   body {
-    padding: 56px 64px;
+    padding: 44px 56px 48px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -41,22 +41,23 @@
   .brand {
     display: flex;
     align-items: center;
-    gap: 22px;
-    margin-bottom: 42px;
+    gap: 26px;
+    margin-bottom: 32px;
   }
   .brand-logo {
-    height: 78px;
+    height: 100px;
     width: auto;
     flex-shrink: 0;
     background: #fff;
-    padding: 10px 16px;
-    border-radius: 10px;
+    padding: 12px 18px;
+    border-radius: 12px;
   }
   .brand-name {
-    font-size: 30px;
+    font-size: 38px;
     font-weight: 800;
     letter-spacing: -0.02em;
     color: #fff;
+    line-height: 1.1;
   }
 
   /* 중앙 — 제호 + 날짜 */
@@ -69,69 +70,55 @@
     flex-wrap: wrap;
   }
   .masthead {
-    font-size: 64px;
+    font-size: 72px;
     font-weight: 900;
     line-height: 1;
     letter-spacing: -0.035em;
   }
   .date-line {
     font-family: 'Inter', 'Pretendard', sans-serif;
-    font-size: 40px;
+    font-size: 54px;
     font-weight: 800;
     letter-spacing: -0.02em;
     color: rgba(255,255,255,0.95);
     line-height: 1;
   }
   .date-line .dow {
-    margin-left: 10px;
+    margin-left: 12px;
     color: rgba(255,255,255,0.65);
     font-weight: 700;
   }
 
-  /* 오늘의 키워드 — 평등한 톤, 한 영역 */
+  /* 오늘의 키워드 — 평등한 톤, 박스가 남은 공간 다 채움 */
   .keywords-block {
     flex: 1;
     background: var(--kaist-blue-deep);
-    border-radius: 14px;
-    padding: 20px 26px;
+    border-radius: 16px;
+    padding: 24px 32px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
   }
   .keywords-label {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.08em;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.6);
     text-transform: uppercase;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
   }
   .keywords {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px 22px;
+    gap: 16px 28px;
   }
   .keywords .kw {
-    font-size: 26px;
+    font-size: 34px;
     font-weight: 700;
     letter-spacing: -0.015em;
     line-height: 1.1;
     color: #fff;
-  }
-
-  /* 하단 — URL */
-  .footer {
-    margin-top: 22px;
-    display: flex;
-    justify-content: flex-end;
-  }
-  .footer-url {
-    font-family: 'Inter', monospace;
-    font-size: 15px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.65);
-    letter-spacing: -0.005em;
   }
 </style>
 </head>
@@ -149,10 +136,6 @@
   <div class="keywords-block">
     <div class="keywords-label">오늘의 키워드</div>
     <div class="keywords" id="keywordList"></div>
-  </div>
-
-  <div class="footer">
-    <div class="footer-url" id="footerUrl">kaistbiztech.github.io/dailytechbrief</div>
   </div>
 
 <script>
