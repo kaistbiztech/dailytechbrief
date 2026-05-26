@@ -22,6 +22,67 @@ OUTPUT_BASE = PROJECT_ROOT / "Message"
 LOGO_PATH = PROJECT_ROOT / "KCB_Logo.png"
 
 
+def build_og_html(edition: dict) -> str:
+    """OG 메타가 박힌 일자별 진입 페이지. 클릭 시 메인 페이지로 즉시 redirect.
+
+    공유 URL: SITE_URL + <id>/ → 이 HTML이 응답.
+    메신저(카톡·슬랙·페북·트위터)는 이 HTML의 <meta> 만 읽고 미리보기에 사용.
+    """
+    eid = edition["id"]
+    date_str = eid.replace("-", ".")
+    dow = edition.get("dayOfWeek", "")
+    titles = edition.get("newsItems", [])
+    headlines_preview = " · ".join(
+        f'{it["order"]:02d} {it["title"]}' for it in titles[:3]
+    )
+
+    og_image = f"{SITE_URL}Message/{eid}/card.png"
+    og_url = f"{SITE_URL}{eid}/"
+    redirect_url = f"{SITE_URL}#{eid}"
+
+    title = f"데일리 테크 브리프 — {date_str} {dow}요일"
+
+    # HTML escape
+    def esc(s: str) -> str:
+        return (
+            s.replace("&", "&amp;")
+            .replace("<", "&lt;")
+            .replace(">", "&gt;")
+            .replace('"', "&quot;")
+        )
+
+    return f"""<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>{esc(title)}</title>
+<meta property="og:type" content="article">
+<meta property="og:title" content="{esc(title)}">
+<meta property="og:description" content="{esc(headlines_preview)}">
+<meta property="og:image" content="{esc(og_image)}">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1920">
+<meta property="og:url" content="{esc(og_url)}">
+<meta property="og:site_name" content="KAIST 경영대학 테크 네트워크">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{esc(title)}">
+<meta name="twitter:description" content="{esc(headlines_preview)}">
+<meta name="twitter:image" content="{esc(og_image)}">
+<meta http-equiv="refresh" content="0; url={esc(redirect_url)}">
+<script>location.replace({json.dumps(redirect_url)});</script>
+<style>
+  body {{ font-family: -apple-system, 'Pretendard', sans-serif; padding: 40px; color: #333; }}
+  a {{ color: #1f4899; }}
+</style>
+</head>
+<body>
+<p>{esc(title)}로 이동 중입니다… <a href="{esc(redirect_url)}">바로 이동</a></p>
+</body>
+</html>
+"""
+
+
 def build_text(edition: dict) -> str:
     """카톡 복붙용 텍스트 — 사이트 링크 상단, KAIST 프레임, 키워드, 3문장 요약."""
     date_str = edition["id"].replace("-", ".")
@@ -33,7 +94,7 @@ def build_text(edition: dict) -> str:
     parts.append("데일리 테크 브리프")
     parts.append(f"{date_str} {dow}요일")
     parts.append("")
-    parts.append(f"전체 보기 👉 {SITE_URL}#{eid}")
+    parts.append(f"전체 보기 👉 {SITE_URL}{eid}/")
 
     # 키워드 묶음
     all_kw = []
@@ -55,7 +116,7 @@ def build_text(edition: dict) -> str:
         parts.append("")
 
     parts.append("━━━━━━━━━━━━━━━━━━━")
-    parts.append(f"전체 보기 👉 {SITE_URL}#{eid}")
+    parts.append(f"전체 보기 👉 {SITE_URL}{eid}/")
     parts.append("© KAIST 경영대학 테크 네트워크")
     return "\n".join(parts)
 
@@ -113,6 +174,13 @@ def main() -> int:
     card_path = out_dir / "card.png"
     generate_card_png(edition, card_path)
     print(f"✓ wrote {card_path.relative_to(PROJECT_ROOT)}")
+
+    # 3) 일자별 OG 진입 페이지 (프로젝트 루트의 {id}/index.html)
+    share_dir = PROJECT_ROOT / edition["id"]
+    share_dir.mkdir(parents=True, exist_ok=True)
+    og_path = share_dir / "index.html"
+    og_path.write_text(build_og_html(edition), encoding="utf-8")
+    print(f"✓ wrote {og_path.relative_to(PROJECT_ROOT)}")
 
     return 0
 

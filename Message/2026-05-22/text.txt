@@ -2,7 +2,7 @@
 데일리 테크 브리프
 2026.05.22 금요일
 
-전체 보기 👉 https://kaistbiztech.github.io/dailytechbrief/#2026-05-22
+전체 보기 👉 https://kaistbiztech.github.io/dailytechbrief/2026-05-22/
 
 🔑 오늘의 키워드
 Claude Opus 4.7 · 멀티에이전트 · Claude Design · 앤트로픽 밀라노 · 유럽 매출 9배 · EMEA 확장 · Claude for Excel·PPT·Word · MS 365 통합 · Outlook 베타 · 토스 원화 스테이블코인 · GENIUS Act · 한국 결제 인프라 · 카카오페이 · AI 결제 인프라 · 에이전트 결제 · 현대차 SDV 페이스카 · Atria AI · 42dot 합작 · Sierra · 9억 5천만 달러 · 21조 밸류 · Anthropic 매출 15조 · 엔터프라이즈 60% · 한국 도입 · Cerebras IPO · 160달러 상향 · AI 칩 IPO · MIT Tech Review · Code with Claude 분석 · 바이브 코딩
@@ -40,5 +40,5 @@ AI 칩 스타트업 세레브라스(Cerebras)가 5월 21일 공모가를 주당 
 MIT Tech Review가 5월 21일 'Code with Claude' 직후 글에서 자동 코딩의 현실을 짚었습니다. 멀티에이전트 코드 생성을 두고 "개발자가 좋아하든 아니든 이것이 다음 단계"라는 결론입니다. 한국 개발자 커뮤니티에서도 '바이브 코딩 시대'를 두고 찬반 토론이 활발해진 흐름입니다.
 
 ━━━━━━━━━━━━━━━━━━━
-전체 보기 👉 https://kaistbiztech.github.io/dailytechbrief/#2026-05-22
+전체 보기 👉 https://kaistbiztech.github.io/dailytechbrief/2026-05-22/
 © KAIST 경영대학 테크 네트워크
