@@ -682,8 +682,7 @@
       `;
       row.addEventListener('click', (ev) => {
         ev.preventDefault();
-        renderEdition(e);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        navigateTo(e.id);
       });
       archive.appendChild(row);
     });
@@ -695,13 +694,50 @@
     renderCards(edition);
   }
 
+  // 발견된 편집본 캐시 (해시 라우팅에서 재사용)
+  let _editions = [];
+  let _latestId = null;
+
+  // URL hash → 일자 ID 매핑. 예: "#2026-05-25" → "2026-05-25"
+  function hashToId() {
+    const h = (location.hash || '').replace(/^#/, '').trim();
+    return /^\d{4}-\d{2}-\d{2}$/.test(h) ? h : null;
+  }
+
+  function navigateTo(id) {
+    // 해시 변경 → hashchange 핸들러가 렌더링 처리
+    if (id === _latestId) {
+      // 최신 호는 hash 없는 깔끔한 URL로
+      history.pushState(null, '', location.pathname + location.search);
+      onHashChange();
+    } else {
+      location.hash = id;
+    }
+  }
+
+  function onHashChange() {
+    const id = hashToId();
+    const target = id ? _editions.find(e => e.id === id) : null;
+    const edition = target || _editions.find(e => e.id === _latestId);
+    if (edition) {
+      renderEdition(edition);
+      renderArchive(_editions, edition.id);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
   async function init() {
     try {
-      const editions = await discoverEditions();
-      if (editions.length === 0) throw new Error('No editions found');
-      const latest = editions[0];
-      renderEdition(latest);
-      renderArchive(editions, latest.id);
+      _editions = await discoverEditions();
+      if (_editions.length === 0) throw new Error('No editions found');
+      _latestId = _editions[0].id;
+
+      const hashId = hashToId();
+      const initial = (hashId && _editions.find(e => e.id === hashId)) || _editions[0];
+      renderEdition(initial);
+      renderArchive(_editions, initial.id);
+
+      window.addEventListener('hashchange', onHashChange);
     } catch (err) {
       console.error(err);
       document.getElementById('tocList').innerHTML =
