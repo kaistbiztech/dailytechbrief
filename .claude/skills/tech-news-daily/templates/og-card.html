@@ -37,26 +37,26 @@
     pointer-events: none;
   }
 
-  /* 상단 — 브랜드 */
+  /* 상단 — 브랜드 (크게) */
   .brand {
     display: flex;
     align-items: center;
-    gap: 18px;
-    margin-bottom: 36px;
+    gap: 22px;
+    margin-bottom: 42px;
   }
   .brand-logo {
-    height: 58px;
+    height: 78px;
     width: auto;
     flex-shrink: 0;
     background: #fff;
-    padding: 8px 12px;
-    border-radius: 8px;
+    padding: 10px 16px;
+    border-radius: 10px;
   }
   .brand-name {
-    font-size: 22px;
+    font-size: 30px;
     font-weight: 800;
-    letter-spacing: -0.015em;
-    color: rgba(255,255,255,0.95);
+    letter-spacing: -0.02em;
+    color: #fff;
   }
 
   /* 중앙 — 제호 + 날짜 */
@@ -65,18 +65,18 @@
     align-items: baseline;
     justify-content: space-between;
     gap: 28px;
-    margin-bottom: 26px;
+    margin-bottom: 28px;
     flex-wrap: wrap;
   }
   .masthead {
-    font-size: 56px;
+    font-size: 64px;
     font-weight: 900;
     line-height: 1;
     letter-spacing: -0.035em;
   }
   .date-line {
     font-family: 'Inter', 'Pretendard', sans-serif;
-    font-size: 38px;
+    font-size: 40px;
     font-weight: 800;
     letter-spacing: -0.02em;
     color: rgba(255,255,255,0.95);
@@ -88,34 +88,37 @@
     font-weight: 700;
   }
 
-  /* 키워드 — 가운데~하단 */
-  .keywords {
+  /* 오늘의 키워드 — 평등한 톤, 한 영역 */
+  .keywords-block {
     flex: 1;
     background: var(--kaist-blue-deep);
     border-radius: 14px;
-    padding: 22px 26px;
+    padding: 20px 26px;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 12px 20px;
+    flex-direction: column;
+    justify-content: center;
     box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
   }
+  .keywords-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+  }
   .keywords .kw {
-    color: #fff;
+    font-size: 26px;
     font-weight: 700;
     letter-spacing: -0.015em;
-    line-height: 1.05;
+    line-height: 1.1;
+    color: #fff;
   }
-  .kw.size-1 { font-size: 18px; opacity: 0.65; font-weight: 600; }
-  .kw.size-2 { font-size: 24px; opacity: 0.85; }
-  .kw.size-3 { font-size: 32px; }
-  .kw.size-4 { font-size: 40px; font-weight: 800; }
-  /* 색조 — order 순환 */
-  .kw[data-order="1"], .kw[data-order="6"]  { color: #ffffff; }
-  .kw[data-order="2"], .kw[data-order="7"]  { color: #fef9e0; }
-  .kw[data-order="3"], .kw[data-order="8"]  { color: #d8ecff; }
-  .kw[data-order="4"], .kw[data-order="9"]  { color: #ecd9ff; }
-  .kw[data-order="5"], .kw[data-order="10"] { color: #ffd9e3; }
 
   /* 하단 — URL */
   .footer {
@@ -143,7 +146,10 @@
     <div class="date-line" id="dateLine">— <span class="dow"></span></div>
   </div>
 
-  <div class="keywords" id="keywordList"></div>
+  <div class="keywords-block">
+    <div class="keywords-label">오늘의 키워드</div>
+    <div class="keywords" id="keywordList"></div>
+  </div>
 
   <div class="footer">
     <div class="footer-url" id="footerUrl">kaistbiztech.github.io/dailytechbrief</div>
@@ -160,22 +166,16 @@
     document.getElementById('dateLine').innerHTML =
       `${dateStr} <span class="dow">${ed.dayOfWeek}요일</span>`;
 
-    // 상위 카드의 키워드만 노출 (1~6번). 1·2번 키워드는 size-4, 3·4번은 size-3, 5·6번은 size-2.
+    // 각 카드(1~10번)의 첫 번째 키워드 1개씩 = 정확히 10개를 평등하게 노출
     const cloud = document.getElementById('keywordList');
     cloud.innerHTML = '';
-    const TOP = ed.newsItems.slice(0, 6);
-    TOP.forEach(it => {
-      let size;
-      if (it.order <= 2) size = 4;
-      else if (it.order <= 4) size = 3;
-      else size = 2;
-      (it.keywords || []).slice(0, 2).forEach(k => {
-        const span = document.createElement('span');
-        span.className = 'kw size-' + size;
-        span.dataset.order = it.order;
-        span.textContent = k;
-        cloud.appendChild(span);
-      });
+    ed.newsItems.forEach(it => {
+      const kw = (it.keywords || [])[0];
+      if (!kw) return;
+      const span = document.createElement('span');
+      span.className = 'kw';
+      span.textContent = kw;
+      cloud.appendChild(span);
     });
   }
   window.renderEdition = render;
