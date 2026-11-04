@@ -180,11 +180,19 @@ python3 .claude/skills/tech-news-daily/scripts/build_site.py
 - `date/<id>/og.png` — 메신저 미리보기용 카드 PNG (= card.png 사본)
 - `index.html` — 최신 호와 동일한 콘텐츠 (루트 진입점)
 
-**공유 URL 패턴**: `https://kaistbiz-technews.growseoul.com/date/<id>/`
+**공유 URL 패턴**: `https://technews.growseoul.com/date/<id>/`
 
 `generate_message.py`가 Playwright로 PNG 캡처해서 `Message/<id>/card.png`와 `date/<id>/og.png` 두 경로에 저장한다. `build_site.py`는 `index.html` 안 `<!-- BUILD:META:START --> ... <!-- BUILD:META:END -->` 마커 영역을 그 일자 메타·라우팅 변수로 교체해 일자별 정적 HTML을 생성한다.
 
 생성 실패 시: 사용자에게 명확히 보고하되, 본 [8]의 JSON 파일은 이미 저장됨. 다음 단계로 진행한다.
+
+### [9-a] 기사별 '알기 쉽게 읽기' 페이지 (선택, 2026-11 추가)
+
+- 데이터: `data/analysis/<id>.json` — 작성 지침·스키마는 `references/analysis-prompt.md`. 원문을 WebFetch로 읽고 근거 있는 사실만, 못 읽으면 `basis: "clip"`(페이지에 '원문 요약 기준' 표시).
+- `build_site.py`가 `scripts/article_pages.py`로 `date/<id>/<NN>/index.html`(NN=01~10)을 만든다. 기사별 og 태그, 이전/다음 기사, 그날 호로 돌아가기 포함.
+- 분석이 있는 호는 홈 카드가 원문 버튼 대신 '알기 쉽게 읽기 →'로 기사 페이지에 연결된다(`window.__ANALYSIS__`). 원문 링크는 기사 페이지 안 '원문 · 출처'에 있다. 분석이 없는 호는 기존처럼 원문 버튼.
+- HQ에서 매일: `bin/clip-to-technews <날짜>` → `bin/technews-analyze <날짜>`(claude -p, 끝나면 build_site 실행).
+- `git add` 대상에 `data/analysis/<id>.json`도 포함한다.
 
 ### [10] Git 자동화
 
@@ -194,7 +202,7 @@ python3 .claude/skills/tech-news-daily/scripts/build_site.py
 
 ```bash
 cd /Users/cheil/dev/technews
-git add data/<id>.json date/<id>/ index.html
+git add data/<id>.json data/analysis/ date/<id>/ index.html
 git commit -m "Add daily brief: <id>"
 git push
 ```

@@ -20,7 +20,10 @@ import shutil
 import sys
 from pathlib import Path
 
-SITE_URL = "https://kaistbiz-technews.growseoul.com/"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from article_pages import build_articles  # noqa: E402
+
+SITE_URL = "https://technews.growseoul.com/"
 BASE_PATH = "/"
 PROJECT_ROOT = Path(__file__).resolve().parents[4]   # /Users/cheil/dev/technews
 INDEX_HTML = PROJECT_ROOT / "index.html"
@@ -55,7 +58,7 @@ def load_editions() -> list[dict]:
     return eds
 
 
-def build_meta_block(edition: dict, latest_id: str, og_url: str, all_ids: list | None = None) -> str:
+def build_meta_block(edition: dict, latest_id: str, og_url: str, all_ids: list | None = None, analysis_map: dict | None = None) -> str:
     eid = edition["id"]
     date_str = eid.replace("-", ".")
     dow = edition.get("dayOfWeek", "")
@@ -85,12 +88,13 @@ def build_meta_block(edition: dict, latest_id: str, og_url: str, all_ids: list |
         f'  window.__INITIAL_ID__ = "{eid}";\n'
         f'  window.__LATEST_ID__ = "{latest_id}";\n'
         f"  window.__EDITION_IDS__ = {json.dumps(all_ids or [])};\n"
+        f"  window.__ANALYSIS__ = {json.dumps(analysis_map or {})};\n"
         f"</script>"
     )
 
 
-def render_page(template_html: str, edition: dict, latest_id: str, og_url: str, all_ids: list | None = None) -> str:
-    meta = build_meta_block(edition, latest_id, og_url, all_ids)
+def render_page(template_html: str, edition: dict, latest_id: str, og_url: str, all_ids: list | None = None, analysis_map: dict | None = None) -> str:
+    meta = build_meta_block(edition, latest_id, og_url, all_ids, analysis_map)
     replacement = f"<!-- BUILD:META:START -->\n{meta}\n<!-- BUILD:META:END -->"
     if not META_PATTERN.search(template_html):
         raise SystemExit("템플릿에 <!-- BUILD:META:START --> / <!-- BUILD:META:END --> 마커가 없습니다.")
@@ -112,6 +116,14 @@ def main() -> int:
 
     DATE_DIR.mkdir(exist_ok=True)
 
+    # 0) 기사별 '알기 쉽게 읽기' 페이지 (data/analysis/<id>.json 이 있는 호만)
+    analysis_map = {}
+    for ed in editions:
+        made = build_articles(ed, DATA_DIR, DATE_DIR, SITE_URL, BASE_PATH)
+        if made:
+            analysis_map[ed["id"]] = made
+            print(f"✓ wrote date/{ed['id']}/NN/ 기사 페이지 {len(made)}개")
+
     # 1) 일자별 페이지
     for ed in editions:
         eid = ed["id"]
@@ -119,7 +131,7 @@ def main() -> int:
         page_dir.mkdir(parents=True, exist_ok=True)
 
         og_url = f"{SITE_URL}date/{eid}/"
-        out_html = render_page(template_html, ed, latest_id, og_url, all_ids)
+        out_html = render_page(template_html, ed, latest_id, og_url, all_ids, analysis_map)
         (page_dir / "index.html").write_text(out_html, encoding="utf-8")
         print(f"✓ wrote {(page_dir / 'index.html').relative_to(PROJECT_ROOT)}")
 
@@ -130,7 +142,7 @@ def main() -> int:
     # 2) 루트 index.html (= 최신 호와 동일, og:url만 루트)
     latest = editions[0]
     root_og_url = SITE_URL  # 루트 URL
-    out_html = render_page(template_html, latest, latest_id, root_og_url, all_ids)
+    out_html = render_page(template_html, latest, latest_id, root_og_url, all_ids, analysis_map)
     INDEX_HTML.write_text(out_html, encoding="utf-8")
     print(f"✓ wrote index.html (latest = {latest_id})")
 

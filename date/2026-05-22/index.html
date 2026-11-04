@@ -8,21 +8,22 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="데일리 테크 브리프 — 2026.05.22 금요일">
 <meta property="og:description" content="01 앤트로픽, Claude Opus 4.7과 멀티에이전트 · 02 앤트로픽, 밀라노 사무소 개설… 유럽 매출 9배 · 03 Claude, Excel·PPT·Word 정식 출시">
-<meta property="og:image" content="https://kaistbiz-technews.growseoul.com/date/2026-05-22/og.png">
+<meta property="og:image" content="https://technews.growseoul.com/date/2026-05-22/og.png">
 <meta property="og:image:width" content="1080">
 <meta property="og:image:height" content="1920">
-<meta property="og:url" content="https://kaistbiz-technews.growseoul.com/date/2026-05-22/">
+<meta property="og:url" content="https://technews.growseoul.com/date/2026-05-22/">
 <meta property="og:site_name" content="KAIST 경영대학 테크 네트워크">
 <meta property="og:locale" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="데일리 테크 브리프 — 2026.05.22 금요일">
 <meta name="twitter:description" content="01 앤트로픽, Claude Opus 4.7과 멀티에이전트 · 02 앤트로픽, 밀라노 사무소 개설… 유럽 매출 9배 · 03 Claude, Excel·PPT·Word 정식 출시">
-<meta name="twitter:image" content="https://kaistbiz-technews.growseoul.com/date/2026-05-22/og.png">
+<meta name="twitter:image" content="https://technews.growseoul.com/date/2026-05-22/og.png">
 <script>
   /* BASE_PATH는 페이지 JS의 fallback이 location.pathname에서 도출 */
   window.__INITIAL_ID__ = "2026-05-22";
   window.__LATEST_ID__ = "2026-11-04";
   window.__EDITION_IDS__ = ["2026-11-04", "2026-05-26", "2026-05-22", "2026-05-21"];
+  window.__ANALYSIS__ = {"2026-11-04": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]};
 </script>
 <!-- BUILD:META:END -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -373,6 +374,11 @@
     color: #fff;
   }
   .detail-cta svg { width: 12px; height: 12px; }
+  .detail-cta-primary { background: var(--kaist-blue); color: #fff; padding: 9px 16px; font-size: 14px; }
+  .detail-cta-primary:hover { background: var(--kaist-blue-deep); border-color: var(--kaist-blue-deep); }
+  .news-card-linked { cursor: pointer; transition: background 0.15s ease; }
+  .news-card-linked:hover { background: var(--rule-soft); }
+  .news-card-linked:hover .news-title { color: var(--kaist-blue); }
 
   /* ============ FLOATING ACTION BUTTONS (우측 하단) ============ */
   .fab-stack {
@@ -841,7 +847,14 @@
       const sources = getSources(item);
       const primary = sources[0];
 
-      const ctaHtml = sources.length > 0
+      // 분석 페이지가 있으면 카드 → 우리 기사 페이지(원문 링크는 그 페이지 안에). 없으면 기존처럼 원문 버튼.
+      const analyzed = (window.__ANALYSIS__ && window.__ANALYSIS__[edition.id] || []).includes(item.order);
+      const articleUrl = BASE_PATH + 'date/' + edition.id + '/' + pad2(item.order) + '/';
+      const ctaHtml = analyzed
+        ? `<div class="detail-cta-group">
+             <a href="${esc(articleUrl)}" class="detail-cta detail-cta-primary">알기 쉽게 읽기 →</a>
+           </div>`
+        : sources.length > 0
         ? `<div class="detail-cta-group">
              ${sources.map(s => `
                <a href="${esc(s.url)}" target="_blank" rel="noopener" class="detail-cta">
@@ -852,8 +865,15 @@
         : '';
 
       const card = document.createElement('article');
-      card.className = 'news-card';
+      card.className = 'news-card' + (analyzed ? ' news-card-linked' : '');
       card.id = `news-${item.order}`;
+      if (analyzed) {
+        card.addEventListener('click', e => {
+          if (e.target.closest('a')) return;
+          if (window.getSelection && String(window.getSelection())) return;
+          location.href = articleUrl;
+        });
+      }
       const eventDateHtml = item.eventDate
         ? `<span class="news-event-date">${esc(item.eventDate.replaceAll('-', '.'))}</span>`
         : '';
@@ -864,7 +884,7 @@
             <div class="news-num">${pad2(item.order)}</div>
             ${eventDateHtml}
           </div>
-          <div class="news-title">${esc(item.title)}</div>
+          <div class="news-title">${analyzed ? `<a href="${esc(articleUrl)}">${esc(item.title)}</a>` : esc(item.title)}</div>
         </div>
         <div class="news-detail-inner">
           <p class="detail-summary">${esc(item.summary)}</p>
