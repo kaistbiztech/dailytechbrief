@@ -18,7 +18,7 @@ import shutil
 import sys
 from pathlib import Path
 
-SITE_URL = "https://kaistbiztech.github.io/dailytechbrief/"
+SITE_URL = "https://kaistbiz-technews.growseoul.com/"
 PROJECT_ROOT = Path(__file__).resolve().parents[4]   # /Users/cheil/dev/technews
 TEMPLATES_DIR = Path(__file__).resolve().parents[1] / "templates"
 KAKAO_TEMPLATE = TEMPLATES_DIR / "kakao-card.html"   # 9:16 세로, 카톡 앱 첨부용

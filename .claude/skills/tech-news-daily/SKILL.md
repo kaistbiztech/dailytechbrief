@@ -180,7 +180,7 @@ python3 .claude/skills/tech-news-daily/scripts/build_site.py
 - `date/<id>/og.png` — 메신저 미리보기용 카드 PNG (= card.png 사본)
 - `index.html` — 최신 호와 동일한 콘텐츠 (루트 진입점)
 
-**공유 URL 패턴**: `https://kaistbiztech.github.io/dailytechbrief/date/<id>/`
+**공유 URL 패턴**: `https://kaistbiz-technews.growseoul.com/date/<id>/`
 
 `generate_message.py`가 Playwright로 PNG 캡처해서 `Message/<id>/card.png`와 `date/<id>/og.png` 두 경로에 저장한다. `build_site.py`는 `index.html` 안 `<!-- BUILD:META:START --> ... <!-- BUILD:META:END -->` 마커 영역을 그 일자 메타·라우팅 변수로 교체해 일자별 정적 HTML을 생성한다.
 

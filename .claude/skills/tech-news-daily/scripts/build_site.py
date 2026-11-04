@@ -20,8 +20,8 @@ import shutil
 import sys
 from pathlib import Path
 
-SITE_URL = "https://kaistbiztech.github.io/dailytechbrief/"
-BASE_PATH = "/dailytechbrief/"
+SITE_URL = "https://kaistbiz-technews.growseoul.com/"
+BASE_PATH = "/"
 PROJECT_ROOT = Path(__file__).resolve().parents[4]   # /Users/cheil/dev/technews
 INDEX_HTML = PROJECT_ROOT / "index.html"
 DATA_DIR = PROJECT_ROOT / "data"
@@ -55,7 +55,7 @@ def load_editions() -> list[dict]:
     return eds
 
 
-def build_meta_block(edition: dict, latest_id: str, og_url: str) -> str:
+def build_meta_block(edition: dict, latest_id: str, og_url: str, all_ids: list | None = None) -> str:
     eid = edition["id"]
     date_str = eid.replace("-", ".")
     dow = edition.get("dayOfWeek", "")
@@ -84,12 +84,13 @@ def build_meta_block(edition: dict, latest_id: str, og_url: str) -> str:
         f"  /* BASE_PATH는 페이지 JS의 fallback이 location.pathname에서 도출 */\n"
         f'  window.__INITIAL_ID__ = "{eid}";\n'
         f'  window.__LATEST_ID__ = "{latest_id}";\n'
+        f"  window.__EDITION_IDS__ = {json.dumps(all_ids or [])};\n"
         f"</script>"
     )
 
 
-def render_page(template_html: str, edition: dict, latest_id: str, og_url: str) -> str:
-    meta = build_meta_block(edition, latest_id, og_url)
+def render_page(template_html: str, edition: dict, latest_id: str, og_url: str, all_ids: list | None = None) -> str:
+    meta = build_meta_block(edition, latest_id, og_url, all_ids)
     replacement = f"<!-- BUILD:META:START -->\n{meta}\n<!-- BUILD:META:END -->"
     if not META_PATTERN.search(template_html):
         raise SystemExit("템플릿에 <!-- BUILD:META:START --> / <!-- BUILD:META:END --> 마커가 없습니다.")
@@ -107,6 +108,7 @@ def main() -> int:
         print("No editions found in data/", file=sys.stderr)
         return 1
     latest_id = editions[0]["id"]
+    all_ids = [e["id"] for e in editions]
 
     DATE_DIR.mkdir(exist_ok=True)
 
@@ -117,7 +119,7 @@ def main() -> int:
         page_dir.mkdir(parents=True, exist_ok=True)
 
         og_url = f"{SITE_URL}date/{eid}/"
-        out_html = render_page(template_html, ed, latest_id, og_url)
+        out_html = render_page(template_html, ed, latest_id, og_url, all_ids)
         (page_dir / "index.html").write_text(out_html, encoding="utf-8")
         print(f"✓ wrote {(page_dir / 'index.html').relative_to(PROJECT_ROOT)}")
 
@@ -128,7 +130,7 @@ def main() -> int:
     # 2) 루트 index.html (= 최신 호와 동일, og:url만 루트)
     latest = editions[0]
     root_og_url = SITE_URL  # 루트 URL
-    out_html = render_page(template_html, latest, latest_id, root_og_url)
+    out_html = render_page(template_html, latest, latest_id, root_og_url, all_ids)
     INDEX_HTML.write_text(out_html, encoding="utf-8")
     print(f"✓ wrote index.html (latest = {latest_id})")
 
