@@ -1,0 +1,130 @@
+{
+  "id": "2026-11-04",
+  "volumeNumber": 4,
+  "publishedAt": "2026-11-04T06:30:00+09:00",
+  "dayOfWeek": "수",
+  "coverage": {
+    "from": "2026-11-03",
+    "to": "2026-11-04",
+    "label": "11월 3~4일 (지난 24시간)"
+  },
+  "newsItems": [
+    {
+      "order": 1,
+      "title": "오라클 200억달러 조달, 메타도 채권 검토",
+      "summary": "오라클이 신주 100억달러와 채권 100억달러(약 26조원)를 조달함. 신주는 주당 116달러로 직전 종가보다 11.2% 낮고 채권 금리는 7~8.65%, 주가는 8.8% 하락. 메타는 3분기 21억달러 넘는 현금 유출에 S&P가 전망을 '부정적'으로 낮춤. AI 투자 부담이 빅테크 신용에 반영되기 시작함.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=216944"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "title": "마벨, 루멘텀 1150억달러(약 154조원)에 인수",
+      "summary": "전액 주식 교환(루멘텀 1주당 마벨 4.5주)이며 2028년 상반기 완료 예정. 발표 당일 마벨 주가 13%, 루멘텀 주가 약 19% 하락. AI 데이터센터 광통신을 사들이려는 베팅이지만 시장 반응은 차가움.",
+      "sources": [
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/02/marvell-to-buy-lumentum-in-115-billion-deal-in-ai-data-center-bet-.html"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "title": "AI 추론 스타트업 fal, 기업가치 160억달러로 2배",
+      "summary": "13억달러 투자를 받았고 베세머가 주도, 엔비디아도 참여. 4월 80억달러에서 7개월 만에 두 배가 됐고 연환산 매출은 8억달러 넘음. 모델 학습보다 추론 수요로 돈이 몰리는 흐름.",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/03/ai-inference-startup-fal-doubles-its-valuation-to-16b-as-demand-surges/"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "title": "팔란티어 3분기 매출 23억달러, 96% 증가",
+      "summary": "예상치 21억8000만달러를 웃돌았고 미국 민간 매출(9억8400만달러)이 처음으로 정부 매출(9억5300만달러)을 넘음. 다만 미국 기업 계약 규모는 직전 분기 21억3000만달러에서 14억6000만달러로 줄었고 계약 기간이 짧아지는 흐름이 부담으로 꼽힘.",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/03/hiding-inside-palantirs-skyrocketing-quarter-is-a-foreboding-signal/"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "title": "래블업, 상장 첫날 급등 후 급락",
+      "summary": "공모가 1만9000원 대비 장중 49.2% 올랐다가 종가 1만4220원으로 25.2% 하락 마감. 기관 수요예측 경쟁률은 284.5대 1이었지만 공모가는 희망 범위 하단. 시가총액은 공모가 기준보다 약 700억원 낮은 2071억원. 코스닥 하락과 AI 인프라주 약세가 겹침.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=216962"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "title": "엔비디아, 클라우드 고객에 \"중국 기업 매출 49% 이하\" 요구",
+      "summary": "FT 보도 인용. 신규 계약부터 적용되고 구두로 전달됐다고 함. 중국 기업이 해외 GPU를 빌려 AI를 학습하는 우회로를 막으려는 조치. 중국 고객이 많은 동남아 데이터센터가 가장 큰 타격을 받을 가능성.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=216969"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "title": "SK하이닉스 뉴욕 450억달러 NAND 투자, 미국 규제에 발목",
+      "summary": "로이터 보도 인용. 솔리다임이 뉴욕 마시에 짓는 공장 투자(약 60조원, 최대 1000억달러)가 중국 다롄 공장 확장용 미국 장비 반출 승인과 엮여 지연 중. 상무부는 다롄 증설용 장비를 더 허용하지 않겠다는 입장. 한 곳의 대중 규제가 미국 내 투자까지 붙잡음.",
+      "sources": [
+        {
+          "name": "The Korea Times",
+          "url": "https://www.koreatimes.co.kr/world/20261104/sk-hynixs-new-york-chip-plans-hit-snag-over-us-restrictions-on-china-sources-say"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "title": "구글, 학교는 AI 끄면 검색도 못 씀",
+      "summary": "2027년부터 K12 학생용 제미나이·노트북LM 등 AI 도구가 기본 꺼짐이고 관리자가 켜야 함. 다만 AI를 모두 끄면 검색도 쓸 수 없고, 검색을 쓰려면 AI 기능을 받아들여야 함. 교육 현장의 AI 선택권이 검색과 묶임.",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/03/google-will-let-schools-disable-its-ai-tools-but-not-without-sacrificing-search/"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "title": "앤트로픽, 응답한 모델을 증명하는 '플래시프루브' 공개",
+      "summary": "모델의 지문을 공개해 특정 출력이 그 모델에서 나왔는지 암호학적으로 검증하는 오픈소스 시스템. 비싼 모델 값을 내고 싼 모델이 응답하는 바꿔치기를 막을 수 있음. 아직 중간 단계 연구이며 실제 도입 계획은 없음.",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/"
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "title": "SKT 사내 에이전트 대회, 3개월간 173건 출품",
+      "summary": "월별 예선에서 20건씩 추려 최종 5건을 선정했고 대상은 악성 앱 분석·공격 서버 추적 에이전트. 4000명 넘는 직원이 에이전트를 만들어 봤고 약 1500개가 상시 사용 중. '1인 1에이전트' 목표로 우수작을 전사 확산할 계획.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=216945"
+        }
+      ]
+    }
+  ],
+  "origin": {
+    "type": "hq-ai-news-clipping",
+    "clip": "HQ/clips/2026-11-04.txt"
+  },
+  "theme": "자금줄",
+  "intro": "오늘 키워드는 '자금줄' AI 투자금을 빚과 신주로 메우는 곳과 추론·인프라로 돈이 몰리는 곳이 갈리고, 상장 시장은 벌써 식는 모습",
+  "outro": "정리하면, 오라클·메타의 빚 조달(1)과 마벨 인수 후 주가 급락(2), 래블업 상장 첫날 급락(5)은 식는 쪽, fal의 투자 유치(3)와 팔란티어 매출(4)은 몰리는 쪽의 같은 '자금줄' 이야기. 그리고 사내 에이전트는 공모전으로 써 본 사람을 늘리는 방식이 효과적(10)."
+}
