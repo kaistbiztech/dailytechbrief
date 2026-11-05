@@ -19,6 +19,7 @@
   sourcesRead  [{name, url, publishedAt?, note?}] — 실제로 읽은 원문
 최상위: id, generatedAt, generator, fxNote
 """
+from __future__ import annotations
 import json
 from pathlib import Path
 

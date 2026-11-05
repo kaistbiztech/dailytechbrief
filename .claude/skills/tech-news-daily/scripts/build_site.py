@@ -14,6 +14,7 @@ Daily Tech Brief - 사이트 빌드 스크립트
 사용법:
     python3 .claude/skills/tech-news-daily/scripts/build_site.py
 """
+from __future__ import annotations
 import json
 import re
 import shutil

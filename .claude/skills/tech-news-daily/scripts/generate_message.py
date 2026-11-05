@@ -13,6 +13,7 @@ OG 메타가 박힌 일자별 정적 HTML은 build_site.py가 생성한다.
 사용법:
     python3 .claude/skills/tech-news-daily/scripts/generate_message.py data/2026-05-26.json
 """
+from __future__ import annotations
 import json
 import shutil
 import sys
