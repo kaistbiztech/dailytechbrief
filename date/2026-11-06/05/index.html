@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오픈AI, 보안 특화 'GPT-6 사이버' 출시 — 데일리 테크 브리프 2026.11.06</title>
+<meta name="description" content="오픈AI가 취약점 찾기와 공격 코드 작성에 특화된 'GPT-6 사이버'를 내놓고, 승인된 보안 고객에게만 제공하기 시작했습니다.">
+<link rel="canonical" href="https://technews.growseoul.com/date/2026-11-06/05/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="오픈AI, 보안 특화 'GPT-6 사이버' 출시">
+<meta property="og:description" content="오픈AI가 취약점 찾기와 공격 코드 작성에 특화된 'GPT-6 사이버'를 내놓고, 승인된 보안 고객에게만 제공하기 시작했습니다.">
+<meta property="og:image" content="https://technews.growseoul.com/date/2026-11-06/og.png">
+<meta property="og:url" content="https://technews.growseoul.com/date/2026-11-06/05/">
+<meta property="og:site_name" content="KAIST 경영대학 테크 네트워크 · 데일리 테크 브리프">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="오픈AI, 보안 특화 'GPT-6 사이버' 출시">
+<meta name="twitter:description" content="오픈AI가 취약점 찾기와 공격 코드 작성에 특화된 'GPT-6 사이버'를 내놓고, 승인된 보안 고객에게만 제공하기 시작했습니다.">
+<meta name="twitter:image" content="https://technews.growseoul.com/date/2026-11-06/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css">
+<style>
+:root{--bg:#fff;--bg-tint:#f3f1ec;--ink:#0a0a14;--ink-soft:#2d2d3a;--ink-mute:#777783;--rule:#e6e6ea;--rule-soft:#f2f2f5;--kaist-blue:#1f4899;--kaist-blue-deep:#15326b}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink);font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.brand{border-bottom:1px solid var(--rule);padding:18px 0}
+.brand a{display:flex;align-items:center;justify-content:center;gap:12px}
+.brand img{height:48px;width:auto}
+.brand span{font-size:18px;font-weight:700;letter-spacing:-.015em}
+.mast{background:var(--kaist-blue);color:#fff;padding:16px 0}
+.mast-inner{max-width:760px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;font-weight:600}
+.mast-inner a{opacity:.92}.mast-inner a:hover{opacity:1;text-decoration:underline}
+.mast-inner b{font-family:'Inter',sans-serif;font-weight:800;letter-spacing:-.01em}
+main{max-width:760px;margin:0 auto;padding:36px 24px 24px}
+.num-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.num{font-family:'Inter',sans-serif;font-weight:800;font-size:40px;line-height:1;color:var(--kaist-blue);letter-spacing:-.03em}
+.badge{font-size:12px;font-weight:700;padding:3px 8px;border-radius:3px;border:1px solid var(--rule);color:var(--ink-mute)}
+.badge.ok{border-color:#cfe0d4;color:#2f6b43;background:#f1f8f3}
+.badge.clip{border-color:#f0d9b5;color:#8a5a12;background:#fdf6ea}
+h1{font-size:clamp(24px,4.6vw,32px);line-height:1.3;letter-spacing:-.02em;font-weight:800;margin-bottom:22px}
+.oneline{background:var(--bg-tint);border-left:4px solid var(--kaist-blue);padding:16px 18px;font-size:18px;line-height:1.65;font-weight:600;color:var(--ink);margin-bottom:8px;border-radius:0 4px 4px 0}
+section{margin-top:34px}
+h2{font-size:13px;font-weight:800;letter-spacing:.08em;color:var(--kaist-blue);border-top:3px solid var(--ink);padding-top:12px;margin-bottom:14px}
+section p{font-size:17px;line-height:1.8;color:var(--ink-soft);margin-bottom:12px}
+.why{display:grid;gap:10px}
+.why div{border:1px solid var(--rule);border-radius:4px;padding:14px 16px}
+.why b{display:inline-block;font-size:13px;font-weight:800;color:#fff;background:var(--kaist-blue);border-radius:3px;padding:2px 8px;margin-bottom:6px}
+.why p{margin:0;font-size:16px}
+.gloss{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gloss div{background:var(--rule-soft);border-radius:4px;padding:14px 16px}
+.gloss dt{font-weight:800;font-size:16px;margin-bottom:4px}
+.gloss dd{font-size:15px;line-height:1.65;color:var(--ink-soft)}
+ul.think{list-style:none}
+ul.think li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--rule);color:var(--ink-soft);line-height:1.7}
+ul.think li::before{content:"?";position:absolute;left:0;top:10px;font-family:'Inter',sans-serif;font-weight:800;color:var(--kaist-blue)}
+.src{display:flex;flex-direction:column;gap:8px}
+.src a{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid var(--kaist-blue);border-radius:4px;padding:12px 14px;color:var(--kaist-blue);font-weight:700;transition:all .15s}
+.src a:hover{background:var(--kaist-blue);color:#fff}
+.src small{display:block;font-weight:500;font-size:13px;opacity:.8;margin-top:2px}
+.notes{margin-top:14px;font-size:14px;color:var(--ink-mute);line-height:1.7}
+.notes li{margin-left:18px}
+.fine{margin-top:18px;font-size:13px;color:var(--ink-mute)}
+nav.pn{max-width:760px;margin:24px auto 0;padding:0 24px 56px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+nav.pn a{border:1px solid var(--rule);border-radius:4px;padding:14px 16px;transition:all .15s;min-height:84px}
+nav.pn a:hover{border-color:var(--kaist-blue);background:var(--rule-soft)}
+nav.pn small{display:block;font-size:12px;font-weight:700;color:var(--kaist-blue);margin-bottom:4px}
+nav.pn span{font-size:15px;font-weight:600;line-height:1.4}
+nav.pn .next{text-align:right}
+nav.pn .back{grid-column:1/-1;text-align:center;background:var(--kaist-blue);color:#fff;border-color:var(--kaist-blue);min-height:0;font-weight:700}
+nav.pn .back:hover{background:var(--kaist-blue-deep);color:#fff}
+nav.pn .empty{visibility:hidden}
+@media (max-width:640px){
+  html,body{font-size:16px}
+  .brand img{height:38px}.brand span{font-size:15px}
+  main{padding:26px 18px 16px}
+  .num{font-size:32px}
+  .oneline{font-size:16.5px}
+  section p{font-size:16px}
+  .gloss{grid-template-columns:1fr}
+  nav.pn{padding:0 18px 40px}
+  nav.pn a{min-height:0}
+  nav.pn .empty{display:none}
+  nav.pn{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="brand"><a href="/"><img src="/KCB_Logo.png" alt="KAIST College of Business"><span>KAIST 경영대학 테크 네트워크</span></a></header>
+<div class="mast"><div class="mast-inner">
+  <a href="/date/2026-11-06/">← 데일리 테크 브리프 2026.11.06 금요일</a>
+  <b>05 / 10</b>
+</div></div>
+<main>
+  <div class="num-row"><div class="num">05</div><span class="badge ok">원문 확인 후 작성</span></div>
+  <h1>오픈AI, 보안 특화 'GPT-6 사이버' 출시</h1>
+  <p class="oneline">오픈AI가 취약점 찾기와 공격 코드 작성에 특화된 'GPT-6 사이버'를 내놓고, 승인된 보안 고객에게만 제공하기 시작했습니다.</p>
+
+  <section><h2>무슨 일인가</h2><p>오픈AI가 현지시간 11월 5일 보안 특화 모델 'GPT-6 사이버'를 공개했습니다. 9월에 나온 'GPT-6 아스트라'를 바탕으로 취약점 발견, 공격 코드 개발, 침투 테스트에 맞춰 추가 훈련한 모델입니다. 공격 코드를 직접 써서 시험 환경에서 돌려 보고, 실패하면 다른 방법을 시도하며, 고치는 방법도 제안합니다.</p><p>로이터 보도에 따르면 리눅스 커널 취약점 1,724건을 재현해 948건에서 실제로 작동하는 권한 상승 공격 코드를 만들었습니다. 이전 모델 'GPT-5.6 솔'의 166건보다 5배 넘게 많고, 948건 중 588건은 알려지지 않았던 취약점이었습니다. 중요한 보안 문제 304건은 수정안과 함께 리눅스 개발자들에게 전달했습니다. 파이어폭스에서는 새로운 고위험 취약점 81건을 찾았습니다.</p><p>익스플로잇짐 평가에서 48.5%를 기록해 'GPT-5.6 사이버'(32.1%)보다 상대적으로 51% 나아졌습니다. 다만 '프론티어사이버' 평가에서는 288개 과제 중 90개를 풀어 GPT-6 아스트라(96개)에 못 미쳤습니다.</p></section>
+  <section><h2>배경 — 왜 지금</h2><p>오픈AI 자체 평가에서 이 모델의 사이버 보안 역량은 가장 높은 '심각(Critical)' 등급을 받았습니다. 그래서 오픈AI 보안 서비스 '데이브레이크' 중 공격 코드 개발 같은 고급 작업용인 '데이브레이크 레드' 고객에게만, 신원과 작업 권한을 따로 확인한 뒤 제공합니다. 허가된 작업 범위를 지킨 비율은 99.93%였습니다.</p><p>팔로알토 네트웍스·시스코·센티넬원 등 보안 기업이 이미 쓰고 있습니다. 오픈AI는 몇 주에 걸쳐 승인 고객 전체로 넓히고, 발전소·수처리 시설 같은 핵심 인프라 보안 담당자를 위한 전용 그룹도 만들 계획입니다. API 가격은 100만 토큰당 입력 20달러(약 2만 6,800원), 출력 100달러(약 13만 4,000원)입니다.</p></section>
+  <section><h2>왜 중요한가</h2><div class="why"><div><b>산업</b><p>취약점을 찾는 능력과 공격하는 능력은 같은 기술의 양면입니다. 같은 모델이 방어자에게는 강력한 도구가, 잘못 쓰이면 위협이 될 수 있어 '누구에게 어떻게 줄 것인가'가 AI 회사의 핵심 과제가 되고 있습니다.</p></div><div><b>일</b><p>보안 담당자라면 사람이 몇 주 걸리던 취약점 분석을 AI가 대량으로 해내는 시대를 준비해야 할 수 있습니다. 반대로 공격자도 비슷한 도구를 갖게 될 가능성을 염두에 두고 패치 속도를 높일 필요가 있습니다.</p></div><div><b>생활</b><p>리눅스나 파이어폭스처럼 많은 사람이 쓰는 소프트웨어의 숨은 구멍이 빨리 발견·수정되면 일반 사용자도 더 안전해질 수 있습니다. 소프트웨어 업데이트를 미루지 않는 습관이 더 중요해집니다.</p></div></div></section>
+  <section><h2>어려운 말 풀이</h2><dl class="gloss"><div><dt>취약점</dt><dd>해커가 악용할 수 있는 소프트웨어의 약점이나 구멍입니다.</dd></div><div><dt>권한 상승 공격</dt><dd>일반 사용자 권한으로 들어온 공격자가 관리자 권한까지 얻어 내는 공격입니다.</dd></div><div><dt>침투 테스트</dt><dd>허락을 받고 실제 해커처럼 시스템을 공격해 보면서 약점을 찾는 보안 점검입니다.</dd></div><div><dt>리눅스 커널</dt><dd>서버·안드로이드 등 수많은 기기에서 쓰이는 리눅스 운영체제의 핵심 부분입니다.</dd></div></dl></section>
+  <section><h2>더 생각해 볼 점</h2><ul class="think"><li>공격 능력이 '심각' 등급인 모델을 승인된 고객에게만 준다는 방식은 충분한 안전장치일까요?</li><li>AI가 찾아낸 취약점이 너무 많아지면, 이를 고치는 개발자들의 부담은 어떻게 나눠야 할까요?</li></ul></section>
+  <section><h2>원문 · 출처</h2><div class="src"><a href="https://www.aitimes.com/news/articleView.html?idxno=217074" target="_blank" rel="noopener"><span>AI타임스 원문 보기<small>2026.11.06 · 오픈AI 공식 블로그·로이터 인용</small></span><span>↗</span></a></div><ul class="notes"><li>리눅스 커널 1,724건·948건 수치는 AI타임스가 로이터 보도를 인용한 것입니다.</li><li>독립 기관의 종합 성능 평가는 아직 확인되지 않았다고 원문에 적혀 있습니다.</li></ul><p class="fine">이 페이지는 아래 원문을 직접 읽고, 원문에 근거가 있는 사실만으로 썼습니다. 원화는 기사에 적힌 환산값을 우선 쓰고, 없으면 1달러≈1,340원으로 어림했습니다.</p></section>
+</main>
+<nav class="pn">
+  <a class="prev" href="/date/2026-11-06/04/"><small>← 이전 기사 · 04</small><span>美 주지사 당선인 인허가 동결 선언, 한국 변압기 업체도 일정 조정 가능성</span></a>
+  <a class="next" href="/date/2026-11-06/06/"><small>다음 기사 → · 06</small><span>애플, 직원 AI 사용 예산 최대 3분의 2 삭감 추진</span></a>
+  <a class="back" href="/date/2026-11-06/#news-5">2026.11.06 호 전체 보기</a>
+</nav>
+</body>
+</html>
