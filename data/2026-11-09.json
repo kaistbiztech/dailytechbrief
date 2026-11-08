@@ -1,0 +1,130 @@
+{
+  "id": "2026-11-09",
+  "volumeNumber": 9,
+  "publishedAt": "2026-11-09T06:30:00+09:00",
+  "dayOfWeek": "월",
+  "coverage": {
+    "from": "2026-11-08",
+    "to": "2026-11-09",
+    "label": "11월 8~9일 (지난 24시간)"
+  },
+  "newsItems": [
+    {
+      "order": 1,
+      "title": "오픈AI, 추가 110억달러 유치…기업가치 1.25조달러",
+      "summary": "아직 마감 전인 라운드에서 110억달러(약 15조원)를 모았고, 몇 주 안에 총 200억달러 안팎이 될 수 있다는 블룸버그 보도. 9월에 알려진 목표(300억달러, 1.4조달러)보다 낮아진 수치라 시장의 눈높이 조정이 읽힘.",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "title": "앤트로픽, 가스 발전기 1.7GW를 4.6조원에 확보",
+      "summary": "34억달러를 들여 원PWR솔루션스가 캐터필러에 주문해 둔 발전기를 넘겨받았고, 설치·운영 엔지니어링 역량도 포함됨. AI 기업의 단일 거래 전력 설비 구매로는 최대 규모. 전력을 직접 쥐려는 경쟁이 본격화됨.",
+      "sources": [
+        {
+          "name": "전자신문",
+          "url": "https://www.etnews.com/20261109000006"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "title": "램프 \"AI 지출 정체\"…앤트로픽 상장 앞두고",
+      "summary": "토큰 지출이 7월 42% 늘었다가 8~9월 두 달 동안 1.5% 증가에 그침. 10월 들어 8.9% 반등했지만 가격 인하가 매출 성장을 약 6억달러 깎았다고 앤트로픽이 공시. 앤트로픽 상장 가치는 2조달러에서 1.2~1.3조달러로 내려갔다는 보도.",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "title": "마이크로칩 \"AI 업체가 공장을 통째로 차지\"…주가 10% 하락",
+      "summary": "11/6 주가가 10.02% 내린 58.35달러. 일반 제품 납기가 4~8주에서 6~32주로 늘었고, 데이터센터 사업은 9월 분기 2억5000만달러 이상으로 55.7% 성장. AI 수요가 일반 반도체 공급까지 밀어내는 중.",
+      "sources": [
+        {
+          "name": "247wallst.com",
+          "url": "https://247wallst.com/investing/2026/11/07/the-chip-shortage-is-back-and-microchip-says-ai-customers-are-crowding-everyone-out/"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "title": "크루소, 와이오밍 데이터센터 부지를 구글에 매각",
+      "summary": "최대 10GW까지 키우려던 사업이며, 구글은 이 캠퍼스 개발에 170억달러(약 23조원) 투자 계획을 밝힘. 구글이 크루소 관리 아래의 비용·공기를 우려했다고 알려짐. 매각 가격은 비공개. 부지 확보는 독립 개발사보다 빅테크가 유리해지는 흐름.",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "title": "젠슨 황, 불륜 인정…엔비디아 이사회 독립 조사 착수",
+      "summary": "황 CEO는 사내 이메일로 아내에게 불충실했다고 사과했고, 상대는 중국 국가안전부 스파이로 지목된 앨리스 황이라는 보도. 이사회는 외부 변호사와 독립 이사 위원회로 조사하며 국가 안보나 기밀 유출 근거는 없다고 밝힘.",
+      "sources": [
+        {
+          "name": "전자신문",
+          "url": "https://www.etnews.com/20261109000007"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "title": "AI전략위, 'AI 입법 프레임워크' 심의…핵심과제 TF 7개 신설",
+      "summary": "22대 국회 29개월간 AI 관련 법안이 477건으로 21대 4년간 170건의 월평균 4.7배. 새 법보다 AI기본법·기존법 개정을 우선하고 국방·안보 분야는 독자 입법 추진. TF는 내년 3월 사이버 복원력, 6월 초지능 대응 과제 등 기한을 정해 운영.",
+      "sources": [
+        {
+          "name": "전자신문",
+          "url": "https://www.etnews.com/20261106000224"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "title": "법원, 클로드 맥스 '사용량 5배·20배' 집단소송 일부 진행 허용",
+      "summary": "캘리포니아 북부 연방지법 앨릭스 쩌 판사가 부정확한 표시와 계약 위반 청구는 살리고 일부 불공정행위 청구는 기각. 원고 계산으론 200달러 요금제가 프로의 6배, 100달러 요금제는 3.5배. 앤트로픽은 5시간 세션 기준이라 반박했지만 안내가 링크 두 번 건너에 있다는 지적.",
+      "sources": [
+        {
+          "name": "thenextweb.com",
+          "url": "https://thenextweb.com/news/anthropic-claude-max-lawsuit-ruling-usage-claims"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "title": "삼성·구글 첫 AI 안경, 12일 예약 판매",
+      "summary": "젠틀몬스터·워비파커 디자인에 제미나이를 넣은 안드로이드 XR 기반 제품으로 정식 출시는 12월. 렌즈에 화면을 띄우는 AR이 아니라 카메라·음성 중심이며 가격은 미공개. 디스플레이형은 이후 제품으로 예고됨.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=217133"
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "title": "메타, 무스 에이전트와 협업하는 '스페이시스' 공개",
+      "summary": "대화로 아이디어를 말하면 무스가 일정표·트래커·프로젝트 보드 같은 맞춤 공간을 만들고, 외부 앱을 연결해 백그라운드로 갱신함. 11/5 무스 보이스에 이어 일주일 새 두 번째 기능. 지역·가격은 기사에 없음.",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/"
+        }
+      ]
+    }
+  ],
+  "origin": {
+    "type": "hq-ai-news-clipping",
+    "clip": "HQ/clips/2026-11-09.txt"
+  },
+  "theme": "눈높이",
+  "intro": "오늘 키워드는 '눈높이'. 몸값은 내려가고 전력·칩·부지 확보 경쟁은 더 치열해지는 한 주의 시작",
+  "outro": "정리하면, 오픈AI·앤트로픽 몸값 조정과 지출 정체(1, 3)에도 전력·칩·부지 선점 경쟁은 계속됨(2, 4, 5). 그리고 AI 요금제 상품은 '몇 배'가 어느 기간 기준인지 약관까지 확인하고 쓰는 것을 권장(8)."
+}
