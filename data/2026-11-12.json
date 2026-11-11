@@ -1,0 +1,130 @@
+{
+  "id": "2026-11-12",
+  "volumeNumber": 12,
+  "publishedAt": "2026-11-12T06:30:00+09:00",
+  "dayOfWeek": "목",
+  "coverage": {
+    "from": "2026-11-11",
+    "to": "2026-11-12",
+    "label": "11월 11~12일 (지난 24시간)"
+  },
+  "newsItems": [
+    {
+      "order": 1,
+      "title": "앤트로픽, 주당 70~78달러로 나스닥 상장 추진…기업가치 최대 1.4조달러",
+      "summary": "8억 2500만 주를 공모해 577억~644억달러를 조달하고, 19일 전후 'ANT'로 거래를 시작할 예정. AMD·구글·엔비디아·TSMC 등이 별도로 260억달러(약 35조원)를 비상장 주식으로 투자. 5월 기업가치 9650억달러에서 크게 오른 수준.",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "title": "오픈AI 3분기 매출 100억달러, 영업손실 109억달러",
+      "summary": "매출은 분기 대비 약 50% 늘었지만 같은 기간 앤트로픽(170억달러)에 밀림. 오픈AI는 주식보상 제외, 앤트로픽은 포함 기준이라 단순 비교는 어려움. 기업용 매출이 두 배로 늘어 전체의 절반을 넘김.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=217263"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "title": "엔비디아 이사회, 젠슨 황 CEO 교체 준비 보도",
+      "summary": "월스트리트저널이 이사회가 이르면 수요일 회의를 열 수 있다고 보도. 황 CEO가 중국 스파이로 의심되는 여성과의 불륜을 인정한 데 이어 직속 임원과의 의혹도 나옴. 시간외 거래에서 주가 약 8% 하락했고 엔비디아 입장은 기사에 없음.",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/11/nvidias-stock-drops-as-board-reportedly-preps-to-oust-ceo-jensen-huang/"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "title": "소프트뱅크, 데이터센터 전력설비 선주문에 5조원 손실…분기 순손실 9조원",
+      "summary": "미국 AI 데이터센터용 가스터빈 선급금 중 회수 못 할 37억달러를 손실 처리. 2년 만의 분기 적자이고, 9월 말 남은 선급금은 95억달러. 오하이오 사업은 취소하지 않고 조달 방식을 재검토 중.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=217292"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "title": "엔스케일, 350억달러 IPO 연기 검토",
+      "summary": "지난달 마이크로소프트가 영국 에식스 데이터센터 임대를 철회하는 등 고객 이탈이 겹침. 코어위브가 한 달 새 40% 넘게 떨어지는 등 빚으로 짓는 '네오클라우드'를 보는 시선이 차가워짐. 확정된 결정은 아니며 엔스케일은 언급을 거부.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=217290"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "title": "앤트로픽, '클로드 오피스' 출시…MS·구글 오피스 시장에 직접 진출",
+      "summary": "화이트보드·시트(유료 베타), 데이터(정식), 구글 미트에 참석자로 들어가 일정과 할 일을 짜는 미팅(팀·엔터프라이즈 베타) 공개. 발표 당일 MS 주가가 장중 3.5% 넘게 빠졌다가 2.2% 하락 마감. 투자·클라우드 파트너가 경쟁자가 됨.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=217251"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "title": "TSMC, 오픈AI·앤트로픽에 최대 10억달러 투자",
+      "summary": "이사회가 10일 승인했고 앤트로픽 최대 5억달러(IPO 공모가로 보통주), 오픈AI 최대 5억달러(우선주). 두 회사 모두 엔비디아 의존을 줄이려 자체 칩을 만드는 중이라 TSMC가 지분으로 관계를 묶으려는 움직임.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=217289"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "title": "뉴욕 AI 안전법 'RAISE Act' 등록 시작",
+      "summary": "연 매출 5억달러 넘는 대형 프런티어 개발사는 내년 1월 1일까지 등록하고, 안전 체계 공개와 중대 사고 72시간 내 보고가 필요함. 위반 시 1회 최대 100만달러, 이후 300만달러. 오픈AI·앤트로픽이 첫 대상.",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/10/openai-anthropic-face-new-oversight-as-new-yorks-ai-safety-law-takes-effect/"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "title": "구글 '제미나이 로보틱스 2.5' 공개…공장 부품 분류 성공률 96%",
+      "summary": "리본 묶기 등 변형되는 물체 조작이 강점이고, 집게로 빵 담기는 성공률이 5%에서 100%로 오름. 96%는 부품을 트레이에 순서대로 담는 작업 기준이며 조립은 아님. 개발 파트너에 단계적으로 제공하고 수치는 구글 자체 평가.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=217274"
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "title": "중기부, 2030년까지 'AI 유니콘 20곳·데카콘 1곳' 육성",
+      "summary": "총 5000억원 규모 펀드를 스타트업·스케일업·유니콘 3단계로 나눠 운영하고, 매년 50곳의 초기 유니콘 후보를 발굴. 투자·고용 상위 20% 기업을 골라 성과에 따라 다음 단계를 지원하는 방식.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=217284"
+        }
+      ]
+    }
+  ],
+  "origin": {
+    "type": "hq-ai-news-clipping",
+    "clip": "HQ/clips/2026-11-12.txt"
+  },
+  "theme": "자금",
+  "intro": "오늘 키워드는 '자금'. 앤트로픽 상장이 코앞인데, 데이터센터에 돈을 대는 쪽은 손실과 상장 연기로 흔들리기 시작함",
+  "outro": "정리하면, 앤트로픽 상장(1)과 오픈AI 손실(2)로 자금이 몰리는 한편, 소프트뱅크 손실(4)과 엔스케일 IPO 연기(5)처럼 인프라에 돈을 대는 쪽은 부담이 드러남. 그리고 앤트로픽이 오피스 시장에 들어온 만큼, 팀에서 쓰는 문서·회의 도구의 AI 연동 방향을 점검해볼 만함(6)."
+}
