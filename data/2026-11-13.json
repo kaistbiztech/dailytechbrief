@@ -1,0 +1,130 @@
+{
+  "id": "2026-11-13",
+  "volumeNumber": 13,
+  "publishedAt": "2026-11-13T06:30:00+09:00",
+  "dayOfWeek": "금",
+  "coverage": {
+    "from": "2026-11-12",
+    "to": "2026-11-13",
+    "label": "11월 12~13일 (지난 24시간)"
+  },
+  "newsItems": [
+    {
+      "order": 1,
+      "title": "젠슨 황, 엔비디아 CEO 사임…크레스 CFO가 임시 CEO",
+      "summary": "12일 사장·CEO·이사직에서 즉시 물러났고 이사회는 내부·외부에서 후임을 찾기로 함. 주가는 장 초반 최대 14.3% 급락했다가 낙폭을 줄였으며 10월 초 고점 대비 약 32% 하락한 상태. 엔비디아는 17일 분기 실적 발표 예정.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=217348"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "title": "미국, 중국 기업의 해외 GPU 원격 이용 규제 추진",
+      "summary": "디 인포메이션에 따르면 상무부가 싱가포르·말레이시아·태국 등 7개국 데이터센터에 블랙웰 이후 칩을 보낼 때 허가를 받도록 하는 규정을 마무리 중이며 이달 중 나올 수 있음. 중국 업체들은 동남아 GPU 선점에 나선 상태. 칩 수출에서 클라우드 접근까지 규제 범위가 넓어지는 흐름.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=217351"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "title": "앤트로픽, 19일 나스닥 상장…공모가 70~78달러",
+      "summary": "8억2500만 주를 내놓아 최대 644억달러(약 86조원) 조달을 목표로 하며 기업가치 목표는 최대 1.4조달러. 한때 거론된 2조달러에서 낮아짐. 구글·엔비디아·마이크로소프트 등이 260억달러 규모를 별도로 인수. 공모가는 18일 확정 예정.",
+      "sources": [
+        {
+          "name": "전자신문",
+          "url": "https://www.etnews.com/20261111000002"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "title": "오픈AI 3분기 매출 100억달러 첫 돌파, 블룸버그 보도",
+      "summary": "2분기 67억달러에서 약 50% 늘었고 연환산 매출은 500억달러. 조정 영업이익률은 -150%에서 -109%로 적자 폭이 줄었지만 회사가 공식 확인한 수치는 아님. 앤트로픽은 3분기 매출이 170억달러로 더 앞서 있음.",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/11/openais-quarterly-revenue-reportedly-crosses-10b-for-the-first-time/"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "title": "구글, '제미나이 4 하이드로젠' 출시",
+      "summary": "코딩·반복 업무용 모델로 AI 종합 지능 지수 51점(엑스하이 54점)이 상위 모델 '아르곤'의 50점보다 높음. 입력 100만 토큰당 1.5달러, 출력 7.5달러로 아르곤·카본 출시가보다 낮음. 무료 이용자도 제미나이 앱에서 자동 모델 선택으로 사용 가능.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=217352"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "title": "구글·삼성 AI 안경, 12월 10일 정식 출시",
+      "summary": "12일부터 한국·미국에서 예약 판매하며 젠틀몬스터 449달러(약 60만원), 와비파커 395달러(약 53만원)부터 시작. 디스플레이 없이 음성·시각 인식 중심에 무게 약 41g. 점유율 81%대인 메타와 12월 정면 승부.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=217346"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "title": "삼성 온양캠퍼스 HBM 신공장 첫 삽",
+      "summary": "12일 착공식에서 삼성전자가 46조원을 들여 HBM 생산라인 5개를 구축한다고 밝힘. 충청권 메가프로젝트 392조원 중 첫 착공으로 투자 발표 4개월 만. 2028년부터 HBM 패키징 핵심 거점으로 육성.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=217336"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "title": "파이어웍스 AI 해킹으로 노션 고객 AI 대화 기록 유출",
+      "summary": "공격자가 클라우드 제공업체를 뚫고 개발 시스템에 접근했고 노션 고객 약 1%가 영향을 받음. 'Insights' 기능 채팅 기록이 대상이며 대부분 고객 특정이 어려움. 두 달 연속 침해라 AI 공급업체 의존이 곧 공급망 위험이 되는 사례.",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/12/cyberattack-on-fireworks-ai-allowed-hackers-to-access-notion-customers-chat-transcripts/"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "title": "미국 전력회사, 앤트로픽 '미소스'로 전력망 취약점 점검",
+      "summary": "듀크에너지 등이 지난여름 말부터 시험하며 기존 보안 체계에 통합하는 중. 제한 공급 모델이라 별도 사용료를 내야 하며 비용이 가장 큰 걱정거리. 앤트로픽의 핵심 인프라 보호 프로그램은 6월 기준 약 150개 조직으로 확대됨.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=217329"
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "title": "알리바바, AI 반도체 자회사 'T-헤드' 홍콩 상장 추진",
+      "summary": "10일 공식 발표했고 최대 30억달러(약 4조원)가 거론되며 규모·일정은 미정. T-헤드는 연환산 매출 약 100억위안, 고객사 650곳 이상. 바이두의 AI 반도체 자회사 쿤룬신도 홍콩 상장을 위한 비공개 신청서를 제출한 상태.",
+      "sources": [
+        {
+          "name": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=217335"
+        }
+      ]
+    }
+  ],
+  "origin": {
+    "type": "hq-ai-news-clipping",
+    "clip": "HQ/clips/2026-11-13.txt"
+  },
+  "theme": "엔비디아 이후",
+  "intro": "오늘 키워드는 '엔비디아 이후'. 젠슨 황 사임이 수출 규제와 AI 투자 구도까지 흔들기 시작함",
+  "outro": "정리하면, 엔비디아 리더십 공백(1)이 중국 대상 칩 규제(2)와 중국 업체의 자체 칩 상장(10)으로 이어지고, 앤트로픽 상장(3)·오픈AI 매출(4)은 AI 자금 판도를 보여줌. 그리고 외부 AI 서비스에 고객 데이터를 맡기는 팀은 공급업체의 보안 공지와 데이터 보관 범위를 점검하는 것을 권장(8)."
+}
