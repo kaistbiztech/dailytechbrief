@@ -1,0 +1,130 @@
+{
+  "id": "2026-11-15",
+  "volumeNumber": 15,
+  "publishedAt": "2026-11-15T06:30:00+09:00",
+  "dayOfWeek": "일",
+  "coverage": {
+    "from": "2026-11-14",
+    "to": "2026-11-15",
+    "label": "11월 14~15일 (지난 24시간)"
+  },
+  "newsItems": [
+    {
+      "order": 1,
+      "title": "앤트로픽 IPO, 18일 가격 결정 앞두고 청약 몰려",
+      "summary": "8억 2500만 주를 주당 70~78달러에 공모하며, 블룸버그는 청약이 공모 물량의 수 배에 달한다고 보도함. 희석 기준 기업가치 약 1조 4000억달러, 상장은 11월 19일 나스닥(티커 ANT) 예정. 가격이 범위 위로 갈지가 이번 주 관전 포인트.",
+      "sources": [
+        {
+          "name": "stockanalysis.com",
+          "url": "https://stockanalysis.com/news/anthropic-ipo-multiple-times-oversubscribed/"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "title": "젠슨 황, 엔비디아 CEO 사임",
+      "summary": "12일 공시로 CEO·이사직에서 즉시 물러났고, 콜렛 크레스 CFO가 CFO를 겸하며 임시 CEO를 맡음. 이사회는 내·외부에서 후임을 찾는 중이며 사임 이유는 공시에 없음. 3분기 실적 발표가 미국 시간 17일이라 첫 시험대가 됨.",
+      "sources": [
+        {
+          "name": "sec.gov",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000082/nvidiaannouncesceotransiti.htm"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "title": "비영리단체 4곳, 빅테크 5곳에 \"차세대 AI 개발 멈춰라\" 소송",
+      "summary": "12일 샌프란시스코에 제기됐고, 피고는 오픈AI·앤트로픽·구글·메타·스페이스X임. 12일 기준 최고 성능 모델보다 강력한 시스템의 개발·배포 금지를 요구하되 챗GPT·클로드 같은 기존 서비스 중단은 요구하지 않음. 아직 법원 판단은 없고, 개발 속도 자체가 소송 대상이 된 첫 사례라 결과에 따라 일정 영향 가능.",
+      "sources": [
+        {
+          "name": "blockmedia.co.kr",
+          "url": "https://blockmedia.co.kr/archives/1165965"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "title": "로이터 \"엔비디아 칩 쓰는 中 AI 프로젝트 230억 위안 이상\"",
+      "summary": "조달 공고·투자 계획·건설 계약 등 150여 건을 분석한 결과 약 4조 6000억원 규모로, 칩 값만이 아니라 건물·전력 설비 투자까지 포함된 수치임. 푸젠성 62억 위안 규모 데이터센터는 H100 사용 계획. 미국 수출 규제 아래서도 수요가 이어지는 정황.",
+      "sources": [
+        {
+          "name": "서울경제",
+          "url": "https://www.sedaily.com/article/20114318"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "title": "뉴욕주, 프런티어 AI 개발사 등록 포털 개설",
+      "summary": "10일 'RAISE 포털'을 열었고, 대형 개발사는 2027년 1월 1일까지 등록해야 함. 중대 안전사고는 72시간 안에 보고해야 하며, 빙엄턴 뉴욕주립대(SUNY)에 AI 안전 테스트 센터도 새로 세움. 연방 차원 규칙이 느린 사이 주 단위 의무가 먼저 시작됨.",
+      "sources": [
+        {
+          "name": "governor.ny.gov",
+          "url": "https://www.governor.ny.gov/news/governor-hochul-declares-ny-will-lead-nation-ai-science-and-safety-launches-new-research"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "title": "구글 '제미나이 4 카본', AI 울트라·유료 API로 확대",
+      "summary": "코딩 에이전트를 나눠 병렬로 돌리는 '/swarm'이 안티그래비티에서 프리뷰로 열림. 유료 API는 100만 토큰당 입력 2달러·출력 10달러로 11월 30일까지만 도입가이고, 12월부터 4달러·20달러로 오름. 써볼 팀은 도입가 기간 안에 시험 필요.",
+      "sources": [
+        {
+          "name": "mixed-news.com",
+          "url": "https://mixed-news.com/en/google-gemini-4-carbon-ai-ultra-antigravity-swarm/"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "title": "LG AI연구원 'K-엑사원 2.5' API 무료 개방",
+      "summary": "8월 공개 모델에 추가 학습을 한 기술 검증 모델로, 자체 분석 기준 24개 지표 종합 성능이 70% 이상 올랐다고 밝힘. 개발·연구용으로 API 키만 받으면 무료이며, 독파모 3차 모델은 2027년 1월 목표. 성능 수치는 LG 자체 평가라 직접 써보며 확인 필요.",
+      "sources": [
+        {
+          "name": "newstomato.com",
+          "url": "https://newstomato.com/ReadNews.aspx?no=1319732"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "title": "엔비디아 \"데이터센터 건물 전체를 하나의 컴퓨터로\"",
+      "summary": "랙별 고정 전력 한도 대신 사용량·온도·작업 부하를 보고 전력을 실시간 배분하는 '맥스 LPS'를 소개함. 한 클라우드 파트너는 같은 전력 예산에서 GPU 구축량이 약 37%, 토큰 생성량이 50% 늘었다고 함. 모든 곳에 같은 효과가 나오는 수치는 아님.",
+      "sources": [
+        {
+          "name": "지디넷코리아",
+          "url": "https://zdnet.co.kr/view/?no=20261109130717"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "title": "구글, 추론용 TPU 'TPU 8tx'·'TPU 8i 맥스' 추가",
+      "summary": "8tx는 팟 크기를 9600개에서 1152개로 줄이는 대신 지연시간을 약 절반으로 낮추는 구성이고, 8i 맥스는 소켓당 메모리가 288GB에서 384GB로 늘어남. 실제 설치는 2027년 예상이라 당장 쓸 수 있는 제품은 아님.",
+      "sources": [
+        {
+          "name": "nextplatform.com",
+          "url": "https://www.nextplatform.com/compute/2026/11/09/google-rejiggers-tpu-accelerators-for-broader-ai-inference-work/5308534"
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "title": "AI로 만든 곡이 멜론 TOP100 1위",
+      "summary": "방송·팬덤 없이 차트 정상에 올랐지만, 사람의 창작 기여도를 어떻게 판단하고 저작권료를 어떻게 나눌지에 대한 기준은 아직 없음. 음악 업계가 먼저 규칙 문제를 마주한 사례.",
+      "sources": [
+        {
+          "name": "news.nate.com",
+          "url": "https://m.news.nate.com/view/20261114n05527"
+        }
+      ]
+    }
+  ],
+  "origin": {
+    "type": "hq-ai-news-clipping",
+    "clip": "HQ/clips/2026-11-15.txt"
+  },
+  "theme": "변수",
+  "intro": "오늘 키워드는 '변수'. 앤트로픽 상장과 엔비디아 CEO 공백, 개발 중단 소송까지 한꺼번에 얽히며 AI 업계 일정표가 흔들림",
+  "outro": "정리하면, 앤트로픽 상장(1)과 엔비디아 CEO 교체(2)가 겹친 가운데 소송(3)과 뉴욕주 등록 의무(5)로 개발 속도에 제동을 거는 움직임이 커지는 흐름. 그리고 제미나이 4 카본을 써볼 계획이라면 도입가가 끝나는 11월 30일 전에 시험해 보는 것을 권장(6)."
+}
