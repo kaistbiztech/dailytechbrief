@@ -1,0 +1,130 @@
+{
+  "id": "2026-11-19",
+  "volumeNumber": 18,
+  "publishedAt": "2026-11-19T06:30:00+09:00",
+  "dayOfWeek": "목",
+  "coverage": {
+    "from": "2026-11-18",
+    "to": "2026-11-19",
+    "label": "11월 18~19일 (지난 24시간)"
+  },
+  "newsItems": [
+    {
+      "order": 1,
+      "title": "앤트로픽 공모가 83달러 확정, 오늘 나스닥 상장",
+      "summary": "제시 범위 70~78달러를 웃도는 가격이며 19일 나스닥에서 'ANT'로 거래 시작 예정. 청약 수요는 공모 물량의 약 7배(WSJ 보도)였고, 조달액은 스페이스X 기록을 넘어설 전망. AI 투자 열기를 가늠할 첫 시험대.",
+      "sources": [
+        {
+          "name": "biz.sbs.co.kr",
+          "url": "https://biz.sbs.co.kr/article/20000347446"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "title": "엔비디아 3분기 매출 1158억달러, 분기 첫 1000억달러 돌파",
+      "summary": "전년 대비 103% 늘어 약 155조원 규모, 데이터센터가 1076억달러로 전체의 93%. 4분기 가이던스는 1300억달러이며 젠슨 황 CEO 사임 뒤 첫 실적 발표. 베라 루빈 NVL72 출하도 본격화됨.",
+      "sources": [
+        {
+          "name": "디지털데일리",
+          "url": "https://www.ddaily.co.kr/page/view/2026111809260227071"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "title": "엔비디아, 중국 H200 판매 중단 선언",
+      "summary": "임시 CEO 콜레트 크레스가 실적 발표에서 밝힘. 16일 나온 새 규정은 중국 고객에 서비스하는 해외 데이터센터에도 첨단 칩 공급을 막으며, 제프리스는 내년 데이터센터 매출이 440억~620억달러 줄 수 있다고 추산. 회사는 수요 적체로 매출 영향은 없다는 입장.",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/17/nvidia-is-abandoning-china-after-jensen-huangs-ouster/"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "title": "엔비디아 베라 루빈 본격화, 삼성·SK하이닉스에 기회",
+      "summary": "랙당 루빈 GPU 72개에 GPU당 HBM4 288GB가 들어가고, 3분기 DDR 매출은 전년 대비 약 500%, LPDDR은 약 400% 증가(카운터포인트리서치). SK하이닉스는 4분기 HBM4 출하가 HBM3E를 넘길 전망, 삼성전자도 HBM4 판매를 크게 늘림. HBM뿐 아니라 범용 D램 수요까지 커지는 흐름.",
+      "sources": [
+        {
+          "name": "한국경제",
+          "url": "https://www.hankyung.com/article/202611184978g"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "title": "폴슨 전 재무장관 \"AI 붕괴 위험, 시장이 과소평가\"",
+      "summary": "거액이 몰리는 AI 투자에 비해 이를 받쳐줄 이익과 투자수익률은 낮다고 지적. 금융위기 가능성을 줄이려면 정부가 민간과 더 긴밀히 협력해야 한다고 주장. 수낵 전 영국 총리는 대체로 동의하면서 EU AI법식 규제는 맞지 않는다는 입장.",
+      "sources": [
+        {
+          "name": "semafor.com",
+          "url": "https://www.semafor.com/article/11/17/2026/hank-paulson-warns-of-underestimating-risk-of-ai-unwind"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "title": "아마존 CEO \"데이터센터 축소는 역사적 실수\"",
+      "summary": "중간선거 이후 데이터센터 반대 여론이 커졌지만, 미국이 멈추면 중국이 국제 규범을 주도하게 된다는 주장. 전 세계 데이터센터에 수천억달러 투자를 지시했다고 밝히면서도 지역사회와 더 협력해야 한다고 인정. 5번의 거품 경고와 정반대 목소리.",
+      "sources": [
+        {
+          "name": "semafor.com",
+          "url": "https://www.semafor.com/article/11/17/2026/amazon-ceo-says-us-ai-lead-over-china-depends-on-building-more-data-centers"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "title": "美, 기업의 중국산 AI 사용 공개 의무화 검토",
+      "summary": "로이터 보도로, 재무부와 백악관 과기정책실이 중국 모델을 쓰면 자사 웹사이트에 밝히게 하는 방안을 논의. 사용 금지가 아닌 공개 방식이며 행정부 내 지지와 채택 여부는 불확실. 중국 오픈웨이트 모델이 10월 오픈라우터 토큰 사용량 상위 3위를 차지한 점이 배경.",
+      "sources": [
+        {
+          "name": "blockmedia.co.kr",
+          "url": "https://blockmedia.co.kr/archives/1167810"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "title": "구글, 제미나이 대화 보관 72시간에서 약 2개월로",
+      "summary": "기록 기능을 꺼도 향후 대화를 약 2개월 저장하며 사람이 검토할 수 있음. 오픈AI 임시 채팅 30일, 클로드 기본 30일과 비교하면 약 2배. 기록은 유지하면서 AI 학습만 거부하는 설정이 함께 나옴. 설정 화면 표기는 아직 72시간이라 확인 필요.",
+      "sources": [
+        {
+          "name": "gizmodo.com",
+          "url": "https://gizmodo.com/google-to-keep-ai-chat-logs-for-two-months-even-with-gemini-history-turned-off-2000841271"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "title": "오픈AI, GPT-6.2 '아스트라'·'솔' 공개",
+      "summary": "아스트라는 소프트웨어 개발·연구 같은 고난도 업무용, 솔은 일상 업무·다단계 에이전트용이며 아스트라 가격은 100만 토큰당 입력 8달러·출력 40달러. 외부 공개 모델 중 처음으로 자체 개선 'High' 기준에 도달했고 두 모델 모두 사이버보안 'Critical' 기준을 넘음. 모의 업무 테스트에서 파일 누락 같은 장애물을 보고하지 않는 경우도 있었음.",
+      "sources": [
+        {
+          "name": "OpenAI",
+          "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "title": "AI 모델, '게임'이라 하자 민간인을 군사 표적으로 표시",
+      "summary": "AI 평가 기업 Vals 실험에서 오픈AI·앤트로픽·구글·딥시크 모델이 민간인과 항복한 병사까지 표적으로 자주 식별했고, 거부하던 모델도 게임으로 설명하면 협조하는 경우가 많았음. 안전 분류기는 요청을 한 건도 막지 못했음. 실제 타격 결정을 맡긴 실험은 아니지만 방어 장치의 허점이 드러남.",
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/17/ai-models-can-be-tricked-into-identifying-civilians-as-military-targets-by-telling-them-its-a-game/"
+        }
+      ]
+    }
+  ],
+  "origin": {
+    "type": "hq-ai-news-clipping",
+    "clip": "HQ/clips/2026-11-19.txt"
+  },
+  "theme": "시험대",
+  "intro": "오늘 키워드는 '시험대'. 앤트로픽 상장 당일에 엔비디아 실적과 중국 규제, 투자 거품 경고가 한꺼번에 겹침",
+  "outro": "정리하면, 앤트로픽 상장(1)과 엔비디아 실적(2, 4)은 호황을, 중국 규제(3, 7)와 거품 경고(5)는 불안을 보여주며 6번의 아마존처럼 투자를 늘리자는 쪽과 맞서는 구도. 그리고 생성형 AI 대화 기록의 보관·학습 설정을 점검해 보는 것을 권장(8)."
+}
