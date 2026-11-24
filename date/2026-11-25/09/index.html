@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>앤트로픽, '클로드 십' 베타 출시 — 데일리 테크 브리프 2026.11.25</title>
+<meta name="description" content="앤트로픽이 AI가 쓴 코드의 검토·수정·승인을 자동화하는 '클로드 십'을 베타로 내놨습니다.">
+<link rel="canonical" href="https://technews.growseoul.com/date/2026-11-25/09/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="앤트로픽, '클로드 십' 베타 출시">
+<meta property="og:description" content="앤트로픽이 AI가 쓴 코드의 검토·수정·승인을 자동화하는 '클로드 십'을 베타로 내놨습니다.">
+<meta property="og:image" content="https://technews.growseoul.com/date/2026-11-25/og.png">
+<meta property="og:url" content="https://technews.growseoul.com/date/2026-11-25/09/">
+<meta property="og:site_name" content="KAIST 경영대학 테크 네트워크 · 데일리 테크 브리프">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="앤트로픽, '클로드 십' 베타 출시">
+<meta name="twitter:description" content="앤트로픽이 AI가 쓴 코드의 검토·수정·승인을 자동화하는 '클로드 십'을 베타로 내놨습니다.">
+<meta name="twitter:image" content="https://technews.growseoul.com/date/2026-11-25/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css">
+<style>
+:root{--bg:#fff;--bg-tint:#f3f1ec;--ink:#0a0a14;--ink-soft:#2d2d3a;--ink-mute:#777783;--rule:#e6e6ea;--rule-soft:#f2f2f5;--kaist-blue:#1f4899;--kaist-blue-deep:#15326b}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink);font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.brand{border-bottom:1px solid var(--rule);padding:18px 0}
+.brand a{display:flex;align-items:center;justify-content:center;gap:12px}
+.brand img{height:48px;width:auto}
+.brand span{font-size:18px;font-weight:700;letter-spacing:-.015em}
+.mast{background:var(--kaist-blue);color:#fff;padding:16px 0}
+.mast-inner{max-width:760px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;font-weight:600}
+.mast-inner a{opacity:.92}.mast-inner a:hover{opacity:1;text-decoration:underline}
+.mast-inner b{font-family:'Inter',sans-serif;font-weight:800;letter-spacing:-.01em}
+main{max-width:760px;margin:0 auto;padding:36px 24px 24px}
+.num-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.num{font-family:'Inter',sans-serif;font-weight:800;font-size:40px;line-height:1;color:var(--kaist-blue);letter-spacing:-.03em}
+.badge{font-size:12px;font-weight:700;padding:3px 8px;border-radius:3px;border:1px solid var(--rule);color:var(--ink-mute)}
+.badge.ok{border-color:#cfe0d4;color:#2f6b43;background:#f1f8f3}
+.badge.clip{border-color:#f0d9b5;color:#8a5a12;background:#fdf6ea}
+h1{font-size:clamp(24px,4.6vw,32px);line-height:1.3;letter-spacing:-.02em;font-weight:800;margin-bottom:22px}
+.oneline{background:var(--bg-tint);border-left:4px solid var(--kaist-blue);padding:16px 18px;font-size:18px;line-height:1.65;font-weight:600;color:var(--ink);margin-bottom:8px;border-radius:0 4px 4px 0}
+section{margin-top:34px}
+h2{font-size:13px;font-weight:800;letter-spacing:.08em;color:var(--kaist-blue);border-top:3px solid var(--ink);padding-top:12px;margin-bottom:14px}
+section p{font-size:17px;line-height:1.8;color:var(--ink-soft);margin-bottom:12px}
+.why{display:grid;gap:10px}
+.why div{border:1px solid var(--rule);border-radius:4px;padding:14px 16px}
+.why b{display:inline-block;font-size:13px;font-weight:800;color:#fff;background:var(--kaist-blue);border-radius:3px;padding:2px 8px;margin-bottom:6px}
+.why p{margin:0;font-size:16px}
+.gloss{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gloss div{background:var(--rule-soft);border-radius:4px;padding:14px 16px}
+.gloss dt{font-weight:800;font-size:16px;margin-bottom:4px}
+.gloss dd{font-size:15px;line-height:1.65;color:var(--ink-soft)}
+ul.think{list-style:none}
+ul.think li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--rule);color:var(--ink-soft);line-height:1.7}
+ul.think li::before{content:"?";position:absolute;left:0;top:10px;font-family:'Inter',sans-serif;font-weight:800;color:var(--kaist-blue)}
+.src{display:flex;flex-direction:column;gap:8px}
+.src a{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid var(--kaist-blue);border-radius:4px;padding:12px 14px;color:var(--kaist-blue);font-weight:700;transition:all .15s}
+.src a:hover{background:var(--kaist-blue);color:#fff}
+.src small{display:block;font-weight:500;font-size:13px;opacity:.8;margin-top:2px}
+.notes{margin-top:14px;font-size:14px;color:var(--ink-mute);line-height:1.7}
+.notes li{margin-left:18px}
+.fine{margin-top:18px;font-size:13px;color:var(--ink-mute)}
+nav.pn{max-width:760px;margin:24px auto 0;padding:0 24px 56px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+nav.pn a{border:1px solid var(--rule);border-radius:4px;padding:14px 16px;transition:all .15s;min-height:84px}
+nav.pn a:hover{border-color:var(--kaist-blue);background:var(--rule-soft)}
+nav.pn small{display:block;font-size:12px;font-weight:700;color:var(--kaist-blue);margin-bottom:4px}
+nav.pn span{font-size:15px;font-weight:600;line-height:1.4}
+nav.pn .next{text-align:right}
+nav.pn .back{grid-column:1/-1;text-align:center;background:var(--kaist-blue);color:#fff;border-color:var(--kaist-blue);min-height:0;font-weight:700}
+nav.pn .back:hover{background:var(--kaist-blue-deep);color:#fff}
+nav.pn .empty{visibility:hidden}
+@media (max-width:640px){
+  html,body{font-size:16px}
+  .brand img{height:38px}.brand span{font-size:15px}
+  main{padding:26px 18px 16px}
+  .num{font-size:32px}
+  .oneline{font-size:16.5px}
+  section p{font-size:16px}
+  .gloss{grid-template-columns:1fr}
+  nav.pn{padding:0 18px 40px}
+  nav.pn a{min-height:0}
+  nav.pn .empty{display:none}
+  nav.pn{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="brand"><a href="/"><img src="/KCB_Logo.png" alt="KAIST College of Business"><span>KAIST 경영대학 테크 네트워크</span></a></header>
+<div class="mast"><div class="mast-inner">
+  <a href="/date/2026-11-25/">← 데일리 테크 브리프 2026.11.25 수요일</a>
+  <b>09 / 10</b>
+</div></div>
+<main>
+  <div class="num-row"><div class="num">09</div><span class="badge ok">원문 확인 후 작성</span></div>
+  <h1>앤트로픽, '클로드 십' 베타 출시</h1>
+  <p class="oneline">앤트로픽이 AI가 쓴 코드의 검토·수정·승인을 자동화하는 '클로드 십'을 베타로 내놨습니다.</p>
+
+  <section><h2>무슨 일인가</h2><p>앤트로픽은 23일(현지시간) 기존 '코드 리뷰'에 수정 도구 'PR 스튜어드'와 승인 도구 '클로드 어프루벌스'를 연결한 '클로드 십'을 공개했습니다. 코드 리뷰는 정식 제공이고, 나머지 두 도구는 공개 베타입니다.</p><p>코드 리뷰는 변경 사항과 주변 코드를 분석해 검증된 지적을 PR에 남깁니다. PR 스튜어드는 자동 검사(CI) 실패, 코드 충돌, 수정 요청에 대응하고 바꿀 때마다 변경 내용과 되돌리는 방법을 설명하며, 직접 승인·병합은 하지 않도록 설계됐습니다. 클로드 어프루벌스는 저장소의 승인 정책에 따라 팀이 허용한 일상적 변경은 클로드가 승인하고, 별도 검토가 필요한 작업은 사람 승인을 요구하도록 설정할 수 있습니다.</p><p>깃허브 저장소를 쓰는 클로드 팀·엔터프라이즈 조직이 대상입니다. 에이전트 사용료는 구독에 포함된 사용량과 별개로 토큰 사용량만큼 청구되고, 승인 정책용 분류 모델과 코드 리뷰에도 비용이 듭니다. 데이터 보관 제로(ZDR), HIPAA 대응 설정, 고객 관리 암호화 키를 쓰는 조직은 쓸 수 없습니다.</p></section>
+  <section><h2>배경 — 왜 지금</h2><p>앤트로픽은 클로드 코드 팀에서 대부분의 코드를 클로드가 쓰고 있다며, PR을 올린 뒤의 검토·승인 작업도 코드 작성과 같은 속도로 하는 것이 목표라고 밝혔습니다. 개발자는 클로드 코드의 '/ship' 명령으로 변경을 올리고, '@claude'로 지시하거나 '@claude stop'으로 멈출 수 있습니다.</p><p>관리자는 적용 저장소, 검토 수준, 실행 시점, 비용 한도를 정할 수 있고, 앤트로픽은 처음에는 승인 판단 결과만 확인하는 관찰 모드로 쓰기를 권했습니다. 실제 병합은 깃허브 브랜치 보호 규칙을 따르지만, 사람 승인을 요구하지 않는 정책에 자동 병합을 함께 켜면 사람 개입 없이 병합될 수 있습니다.</p></section>
+  <section><h2>왜 중요한가</h2><div class="why"><div><b>산업</b><p>AI가 코드를 빠르게 쓰면서 병목이 '사람의 검토'로 옮겨 가고 있습니다. 검토·승인까지 자동화하는 도구 경쟁이 본격화할 수 있습니다.</p></div><div><b>일</b><p>사용량만큼 비용이 붙는 구조라, 도입 전에 비용 한도와 어떤 변경을 AI가 승인해도 되는지 정책부터 정해 두는 것이 중요합니다.</p></div><div><b>생활</b><p>우리가 쓰는 앱의 업데이트 일부가 사람보다 AI의 검토를 더 많이 거치게 될 수 있습니다. 그만큼 안전장치 설계가 중요해집니다.</p></div></div></section>
+  <section><h2>어려운 말 풀이</h2><dl class="gloss"><div><dt>PR(풀 리퀘스트)</dt><dd>코드 변경을 본 프로젝트에 합쳐 달라고 요청하는 단위로, 보통 동료가 검토한 뒤 합칩니다.</dd></div><div><dt>병합</dt><dd>검토가 끝난 코드 변경을 본 코드에 실제로 합치는 일입니다.</dd></div><div><dt>데이터 보관 제로(ZDR)</dt><dd>AI 서비스가 고객 데이터를 처리 후 저장하지 않도록 하는 설정입니다.</dd></div></dl></section>
+  <section><h2>더 생각해 볼 점</h2><ul class="think"><li>어떤 종류의 코드 변경까지 AI 승인에 맡겨도 괜찮을까요?</li><li>검토까지 AI가 하면, 문제가 생겼을 때 책임 소재는 어떻게 정해야 할까요?</li></ul></section>
+  <section><h2>원문 · 출처</h2><div class="src"><a href="https://www.aitimes.com/news/articleView.html?idxno=217729" target="_blank" rel="noopener"><span>AI타임스 원문 보기<small>2026.11.24 · 앤트로픽 소개 글·ClaudeDevs X 게시물 인용</small></span><span>↗</span></a></div><p class="fine">이 페이지는 아래 원문을 직접 읽고, 원문에 근거가 있는 사실만으로 썼습니다. 원화는 기사에 적힌 환산값을 우선 쓰고, 없으면 1달러≈1,340원으로 어림했습니다.</p></section>
+</main>
+<nav class="pn">
+  <a class="prev" href="/date/2026-11-25/08/"><small>← 이전 기사 · 08</small><span>오픈AI 전 엔지니어, 내부 회의 160시간 녹음…코덱스까지 활용</span></a>
+  <a class="next" href="/date/2026-11-25/10/"><small>다음 기사 → · 10</small><span>구글, AI 검색에 월렛 연결…결제 내역까지 활용</span></a>
+  <a class="back" href="/date/2026-11-25/#news-9">2026.11.25 호 전체 보기</a>
+</nav>
+</body>
+</html>
